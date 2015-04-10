@@ -1,9 +1,6 @@
 body
 {
 	margin: 0px 0px 0px 0px;
-	background: url("../PortfolioSite/Assets/map.jpg") fixed;
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
 }
 
 #content
@@ -16,4 +13,12 @@ body
 	max-width: 960px;
 
 	background-color: #A35200;
+}
+
+canvas
+{
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	z-index: -1000;
 }

@@ -21,8 +21,13 @@
 
 		private function UseDesktopJS()
 		{
+			$siteMap = file_get_contents(LOC_JS . "SiteMap.js");
 			$linkHandler = file_get_contents(LOC_JS . "DesktopLinkHandler.js");
-			echo "<script type=\"text/javascript\">\n" . $linkHandler . "\n</script>";
+
+			echo "<script>\n" . 
+				$linkHandler . "\n" .
+				$siteMap .
+				"\n</script>";
 		}
 	}
 ?>
