@@ -1,0 +1,19 @@
+body
+{
+	margin: 0px 0px 0px 0px;
+	background: url("../PortfolioSite/Assets/map.jpg") fixed;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+#content
+{
+	margin: auto;
+	margin-top: 50px;
+	padding-bottom: 20px;
+
+	min-width: 768px;
+	max-width: 960px;
+
+	background-color: #A35200;
+}
