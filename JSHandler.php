@@ -25,7 +25,7 @@
 			$linkHandler = file_get_contents(LOC_JS . "DesktopLinkHandler.js");
 
 			echo "<script src=\"libs/THREE/three.min.js\"></script>\n" .
-				"<script src=\"libs/THREE/OBJLoader.js\"></script>\n" .
+				"<script src=\"libs/THREE/JSONLoader.js\"></script>\n" .
 				"<script>\n" . 
 				$linkHandler . "\n" .
 				$siteMap .

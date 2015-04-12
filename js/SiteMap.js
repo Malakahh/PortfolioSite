@@ -1,7 +1,4 @@
 $(document).ready(function() {
-	var mouseX = 0;
-	var mouseY = 0;
-
 	/*
 		Basic setup
 	*/
@@ -9,55 +6,41 @@ $(document).ready(function() {
 	var viewportWidth = $(window).width();
 	var viewportHeight = $(window).height();
 
-
-
+	var scene = new THREE.Scene();
+	var camera = new THREE.OrthographicCamera(viewportWidth / -2, viewportWidth / 2, viewportHeight / 2, viewportHeight / -2, 1, 1000);
+	//var camera = new THREE.PerspectiveCamera(90, viewportWidth / viewportHeight, 1, 1000);
+	var renderer = new THREE.WebGLRenderer();
+	renderer.setSize(viewportWidth, viewportHeight);
+	container.append(renderer.domElement);
+	
 	/*
 		Gameobjects
 	*/
-	var gameObjects = [];
-
-	// LIGHTS
-	var ambient = new THREE.AmbientLight(0x666666);
-	gameObjects[gameObjects.length] = ambient;
-
-	var directionalLight = new THREE.DirectionalLight(0xffeedd);
-	directionalLight.position.set(0, 70, 100).normalize();
-	gameObjects[gameObjects.length] = directionalLight;
 
 	//Background
-	var backgroundMap = new THREE.ImageUtils.loadTexture("Assets/map.jpg");
+	var backgroundMap = new THREE.ImageUtils.loadTexture("Assets/map.png");
 	var backgroundMaterial = new THREE.SpriteMaterial({
 		map: backgroundMap,
 		fog: false
 	});
 	var backgroundSprite = new THREE.Sprite(backgroundMaterial);
 	backgroundSprite.scale.set(viewportWidth,viewportHeight,1);
-	gameObjects[gameObjects.length] = backgroundSprite;
+	scene.add(backgroundSprite);
 
 	//Candle
-	var candleTexture = new THREE.Texture();
-	var imgLoader = new THREE.ImageLoader ();
-	imgLoader.load('Assets/Candlestick/diffuse.tga', function ( image ) {
-		candleTexture.image = image;
-		texture.needsUpdate = true;
-	});
-
-
-	var objLoader = new THREE.OBJLoader ();
-	objLoader.load('Assets/Candlestick/candlestick.obj', function ( obj ) {
-		obj.traverse( function ( child ) {
-			if ( child instanceof THREE.Mesh ) {
-				child.material.map = candleTexture;
-			}
+	var loader = new THREE.JSONLoader();
+	loader.load("Assets/Candlestick/candlestick.js", function (geometry){
+		var material = new THREE.MeshBasicMaterial({
+			map: THREE.ImageUtils.loadTexture("Assets/Candlestick/diffuse.jpg"),
+			specularMap: THREE.ImageUtils.loadTexture("Assets/Candlestick/specular.jpg")
 		});
-		obj.position.set(125, 0, 100);
-		obj.scale.set(100, 100, 100);
-		gameObjects[gameObjects.length] = obj;
-/*
-		var mesh = new THREE.Mesh(obj, new THREE.MeshLambertMaterial({map: candleTexture}));
-		mesh.position.set(125, 0, 100);
-		mesh.scale.set(100,100,100);
-		gameObjects[gameObjects.length] = mesh;*/
+
+		var mesh = new THREE.Mesh(geometry, material);
+		mesh.scale.set(1.3,1.3,1.3);
+		mesh.position.set(575,175,50);
+		mesh.rotation.set(45,0,0);
+
+		scene.add(mesh);
 	});
 
 	//Cube
@@ -65,7 +48,7 @@ $(document).ready(function() {
 	var cubeMaterial = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 	var cube = new THREE.Mesh( cubeGeometry, cubeMaterial );
 	cube.position.set(0,0,100);
-	gameObjects[gameObjects.length] = cube;
+	//scene.add(cube);
 
 	function RotateCube() {
 		cube.rotation.x += 0.01;
@@ -73,15 +56,8 @@ $(document).ready(function() {
 	}
 
 	/*
-		Engine
+		Run engine
 	*/
-
-	var scene = new THREE.Scene();
-	var camera = new THREE.OrthographicCamera(viewportWidth / -2, viewportWidth / 2, viewportHeight / 2, viewportHeight / -2, 1, 1000);
-	//var camera = new THREE.PerspectiveCamera(90, viewportWidth / viewportHeight, 1, 1000);
-	var renderer = new THREE.WebGLRenderer();
-	renderer.setSize(viewportWidth, viewportHeight);
-	container.append(renderer.domElement);
 
 	//Update size on window resize
 	function ViewportResize() {
@@ -99,23 +75,12 @@ $(document).ready(function() {
 		RotateCube();
 	}
 
-	//Add gameobjects to the scene
-	for (var i = 0; i < gameObjects.length; i++)
-	{
-		scene.add(gameObjects[i]);
-	}
-
 	camera.position.z = 1000;
 
 	var render = function () {
 		requestAnimationFrame( render );
 
 		Update();
-
-		camera.position.x += (mouseX - camera.position.x) * .05;
-		camera.position.y += ( -mouseY - camera.position.y) * .05;
-
-		//camera.lookAt(scene.position);
 
 		renderer.render(scene, camera);
 	};
