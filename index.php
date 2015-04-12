@@ -10,7 +10,6 @@
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="UTF-8">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script src="libs/three.min.js"></script>
 		<?php 
 			$ssHandler->UseStylesheet();
 			$jsHandler->UseJS();
