@@ -97,7 +97,6 @@ $(document).ready(function() {
 
 	//Runs every frame
 	function Update() {
-		RotateCube();
 		flameAnimator.update(clock.getDelta() * 1000);
 	}
 
