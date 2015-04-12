@@ -38,7 +38,7 @@ $(document).ready(function() {
 		var mesh = new THREE.Mesh(geometry, material);
 		mesh.scale.set(1.3,1.3,1.3);
 		mesh.position.set(575,175,50);
-		mesh.rotation.set(45,0,0);
+		mesh.rotation.set(45,45,0);
 
 		scene.add(mesh);
 	});
