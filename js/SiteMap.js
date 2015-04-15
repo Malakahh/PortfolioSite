@@ -18,20 +18,31 @@ $(document).ready(function() {
 		Gameobjects
 	*/
 
+	//Ambient Light
+	var ambientLight = new THREE.AmbientLight( 0xb18260 );
+	scene.add( ambientLight );
+
 	//Background
-	var backgroundMaterial = new THREE.SpriteMaterial({
+	/*var backgroundMaterial = new THREE.SpriteMaterial({
 		map: THREE.ImageUtils.loadTexture("Assets/map.png")
 	});
 	var backgroundSprite = new THREE.Sprite(backgroundMaterial);
 	backgroundSprite.scale.set(viewportWidth,viewportHeight,1);
 	scene.add(backgroundSprite);
+	*/
+	var backgroundGeometry = new THREE.PlaneGeometry(viewportWidth, viewportHeight, 1);
+	var backgroundMaterial = new THREE.MeshLambertMaterial({
+		map: THREE.ImageUtils.loadTexture("Assets/map.png")
+	});
+	var background = new THREE.Mesh(backgroundGeometry, backgroundMaterial);
+	scene.add(background);
 
 	//Candle
-	var candlePosition = new THREE.Vector3(viewportWidth * 0.372,viewportHeight * 0.2383,50);
-	var candleScale = new THREE.Vector3(viewportWidth * 0.0008125, viewportWidth * 0.0008125, viewportWidth * 0.0008125);
-	var jsonLoader = new THREE.JSONLoader();
+	var candlePosition 	= new THREE.Vector3(viewportWidth * 0.372,viewportHeight * 0.2383,50);
+	var candleScale 	= new THREE.Vector3(viewportWidth * 0.0008125, viewportWidth * 0.0008125, viewportWidth * 0.0008125);
+	var jsonLoader 		= new THREE.JSONLoader();
 	jsonLoader.load("Assets/Candlestick/candlestick.js", function (geometry){
-		var material = new THREE.MeshBasicMaterial({
+		var material = new THREE.MeshLambertMaterial({
 			map: THREE.ImageUtils.loadTexture("Assets/Candlestick/diffuse.jpg"),
 			specularMap: THREE.ImageUtils.loadTexture("Assets/Candlestick/specular.jpg")
 		});
@@ -45,16 +56,38 @@ $(document).ready(function() {
 	});
 
 	//Flame
-	var flameTexture = new THREE.ImageUtils.loadTexture("Assets/FlameAnimation.png");
-	var flameAnimator = new TextureAnimator(flameTexture, 8, 1, 8, 120);
-	var flameMaterial = new THREE.MeshBasicMaterial({map: flameTexture, side:THREE.FrontSide, alphaTest: 0.1, transparent:true, opacity:0.9});
-	var flameGeometry = new THREE.PlaneGeometry(50, 50, 1, 1);
-	var flame = new THREE.Mesh(flameGeometry, flameMaterial);
+	var flameTexture 	= new THREE.ImageUtils.loadTexture("Assets/FlameAnimation.png");
+	var flameAnimator 	= new TextureAnimator(flameTexture, 8, 1, 8, 120);
+	var flameMaterial 	= new THREE.MeshBasicMaterial({map: flameTexture, side:THREE.FrontSide, alphaTest: 0.1, transparent:true, opacity:1});
+	var flameGeometry 	= new THREE.PlaneGeometry(50, 50, 1, 1);
+	var flame 			= new THREE.Mesh(flameGeometry, flameMaterial);
 	flame.scale.set(candleScale.x * 0.5,candleScale.y * 0.5,candleScale.z * 0.5);
-	//flame.position.set(candlePosition.x - viewportWidth * 0.009375,candlePosition.y + viewportHeight * 0.18117,candlePosition.z + 350);
 	flame.position.set(candlePosition.x - 11.5385 * candleScale.x, candlePosition.y + 116.923 * candleScale.y, candlePosition.z + 350 * candleScale.z);
 	scene.add(flame);
+
+	var direction = -1, min = 1.25, max = 2.0, time = 3.1;
+	var change = (max - min) / time;
+
+	var flameLight = new THREE.PointLight(0xDD9329, max, viewportWidth);
+	flameLight.position.add(flame.position);
+	scene.add(flameLight);
+
 	
+
+	function AnimateFlameLight(dt)
+	{
+		flameLight.intensity += change * dt * direction;
+
+		if (direction == -1 && flameLight.intensity < min)
+		{
+			direction = 1;
+		}
+		else if (direction == 1 && flameLight.intensity > max)
+		{
+			direction = -1;
+		}
+	}
+
 	/*
 		Run engine
 	*/
@@ -97,7 +130,10 @@ $(document).ready(function() {
 
 	//Runs every frame
 	function Update() {
-		flameAnimator.update(clock.getDelta() * 1000);
+		var dt = clock.getDelta();
+
+		flameAnimator.update(dt * 1000);
+		AnimateFlameLight(dt);
 	}
 
 	camera.position.z = 1000;
