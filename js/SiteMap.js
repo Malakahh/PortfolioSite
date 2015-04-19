@@ -23,13 +23,6 @@ $(document).ready(function() {
 	scene.add( ambientLight );
 
 	//Background
-	/*var backgroundMaterial = new THREE.SpriteMaterial({
-		map: THREE.ImageUtils.loadTexture("Assets/map.png")
-	});
-	var backgroundSprite = new THREE.Sprite(backgroundMaterial);
-	backgroundSprite.scale.set(viewportWidth,viewportHeight,1);
-	scene.add(backgroundSprite);
-	*/
 	var backgroundGeometry = new THREE.PlaneGeometry(viewportWidth, viewportHeight, 1);
 	var backgroundMaterial = new THREE.MeshLambertMaterial({
 		map: THREE.ImageUtils.loadTexture("Assets/map.png")
@@ -78,12 +71,14 @@ $(document).ready(function() {
 	{
 		flameLight.intensity += change * dt * direction;
 
-		if (direction == -1 && flameLight.intensity < min)
+		if (flameLight.intensity <= min)
 		{
+			flameLight.intensity = min;
 			direction = 1;
 		}
-		else if (direction == 1 && flameLight.intensity > max)
+		else if (flameLight.intensity >= max)
 		{
+			flameLight.intensity = max;
 			direction = -1;
 		}
 	}

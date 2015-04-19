@@ -1,4 +1,4 @@
-<h1>CV</h1>
+<h1>Résumé</h1>
 <p>
 	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim ornare mi. Nam vel mattis massa. Phasellus ullamcorper mattis est, a iaculis nunc vestibulum nec. Pellentesque eget sodales nunc. Phasellus at nunc ut mi faucibus ornare. Nunc volutpat, risus congue elementum euismod, elit nunc pharetra orci, quis aliquam quam nunc eget velit. Fusce tincidunt, mi vitae commodo euismod, ligula augue gravida arcu, sed vestibulum nulla elit et erat. Vestibulum sollicitudin luctus enim, eget rhoncus arcu convallis vel. Sed et libero vestibulum, faucibus nibh ut, vestibulum nulla. Proin varius sodales lorem vel condimentum. Nunc condimentum lobortis massa, non pulvinar sapien mollis eu. Integer malesuada elit ut leo laoreet, sit amet egestas mi maximus. Donec faucibus tincidunt est vel malesuada.
 </p>
