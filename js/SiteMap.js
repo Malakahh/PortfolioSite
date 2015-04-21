@@ -1,4 +1,6 @@
-$(document).ready(function() {
+var StartTransition;
+
+function LoadSiteMap() {
 	/*
 		Basic setup
 	*/
@@ -65,8 +67,6 @@ $(document).ready(function() {
 	flameLight.position.add(flame.position);
 	scene.add(flameLight);
 
-	
-
 	function AnimateFlameLight(dt)
 	{
 		flameLight.intensity += change * dt * direction;
@@ -80,6 +80,71 @@ $(document).ready(function() {
 		{
 			flameLight.intensity = max;
 			direction = -1;
+		}
+	}
+
+	//Stripe prototype
+	var stripeGeometry = new THREE.PlaneGeometry(30, 10, 1);
+	var stripeMaterial = new THREE.MeshLambertMaterial({
+		map: THREE.ImageUtils.loadTexture("Assets/stripe.png")
+	});
+	var stripePrototype = new THREE.Mesh(stripeGeometry, stripeMaterial);
+
+	//Transition
+	var locations = {
+		"#About"		: new THREE.Vector3(120, 120, 1),
+		"#Activity"		: new THREE.Vector3(-350, -225, 1),
+		"#Competences"	: new THREE.Vector3(420, 25, 1),
+		"#Contact"		: new THREE.Vector3(50, -350, 1),
+		"#Portfolio"	: new THREE.Vector3(-375, 75, 1),
+		"#Resume"		: new THREE.Vector3(565, -240, 1)
+	};
+
+	var transitionStarted = false;
+	var currentLocation = location.hash;
+	var targetLocation;
+	var OnTransitionFinish;
+	StartTransition = function(to, onTransitionFinish)
+	{
+		targetLocation = to;
+		transitionStarted = true;
+		OnTransitionFinish = onTransitionFinish;
+	}
+
+	var currentPosition = locations[currentLocation].clone();
+	var transitionAlpha = 0;
+	var stripes = [];
+	function TransitionStep()
+	{
+		if (!transitionStarted)
+			return;
+
+		transitionAlpha += 0.01;
+
+		var stripe = stripePrototype.clone();
+
+		stripe.position.lerpVectors(currentPosition, locations[targetLocation], transitionAlpha);
+		Clamp(stripe.position, currentPosition, locations[targetLocation]);
+		
+		stripes.push(stripe);
+		scene.add(stripe);
+
+		//Reset variables for next transition
+		if (stripe.position.equals(locations[targetLocation]))
+		{
+			currentPosition = locations[targetLocation];
+			currentLocation = targetLocation;
+			location.hash = targetLocation;
+			transitionStarted = false;
+			transitionAlpha = 0;
+
+			var s;
+			while (s = stripes.pop())
+			{
+				scene.remove(s);
+			}
+
+			OnTransitionFinish();
 		}
 	}
 
@@ -113,14 +178,30 @@ $(document).ready(function() {
 			{
 				this.currentDisplayTime -= this.tileDisplayDuration;
 				this.currentTile++;
+
 				if (this.currentTile == this.numberOfTiles)
 					this.currentTile = 0;
-				var currentColumn = this.currentTile % this.tilesHorizontal;
-				texture.offset.x = currentColumn / this.tilesHorizontal;
-				var currentRow = Math.floor( this.currentTile / this.tilesHorizontal );
-				texture.offset.y = currentRow / this.tilesVertical;
+
+				var currentColumn 	= this.currentTile % this.tilesHorizontal;
+				texture.offset.x	= currentColumn / this.tilesHorizontal;
+				var currentRow 		= Math.floor( this.currentTile / this.tilesHorizontal );
+				texture.offset.y 	= currentRow / this.tilesVertical;
 			}
 		};
+	}
+
+	function Clamp(v, clamp1, clamp2)
+	{
+		var xMin = Math.min(clamp1.x, clamp2.x);
+		var xMax = Math.max(clamp1.x, clamp2.x);
+		var yMin = Math.min(clamp1.y, clamp2.y);
+		var yMax = Math.max(clamp1.y, clamp2.y);
+		var zMin = Math.min(clamp1.z, clamp2.z);
+		var zMax = Math.max(clamp1.z, clamp2.z);
+
+		v.x = Math.min(xMax, Math.max(xMin, v.x));
+		v.y = Math.min(yMax, Math.max(yMin, v.y));
+		v.z = Math.min(zMax, Math.max(zMin, v.z));
 	}
 
 	//Runs every frame
@@ -129,6 +210,8 @@ $(document).ready(function() {
 
 		flameAnimator.update(dt * 1000);
 		AnimateFlameLight(dt);
+
+		TransitionStep();
 	}
 
 	camera.position.z = 1000;
@@ -142,4 +225,4 @@ $(document).ready(function() {
 	};
 
 	render();
-});
+}

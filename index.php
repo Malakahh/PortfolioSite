@@ -18,7 +18,6 @@
 	<body>
 		<?php include "navigation.php"; ?>
 		<div id="content">
-			<?php include "/Pages/About.php"; ?>
 		</div>
 	</body>
 </html>
