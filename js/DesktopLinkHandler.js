@@ -23,7 +23,6 @@ $(document).ready(function() {
 
 		function OnTransitionEnd()
 		{
-			ChangeContent(event.target);
 			$("#content").show();
 			transitionInProgress = false;
 		}
@@ -33,6 +32,7 @@ $(document).ready(function() {
 			transitionInProgress = true
 			$("#content").hide();
 			StartTransition("#" + $(this).html(), OnTransitionEnd);
+			ChangeContent(event.target);
 		}
 
 		return false; //Cancel click event

@@ -84,20 +84,22 @@ function LoadSiteMap() {
 	}
 
 	//Stripe prototype
-	var stripeGeometry = new THREE.PlaneGeometry(30, 10, 1);
+	var stripeGeometry = new THREE.PlaneGeometry(30, 10, 0);
 	var stripeMaterial = new THREE.MeshLambertMaterial({
 		map: THREE.ImageUtils.loadTexture("Assets/stripe.png")
 	});
 	var stripePrototype = new THREE.Mesh(stripeGeometry, stripeMaterial);
+	stripePrototype.position = new THREE.Vector3(0,0,0);
+	var stripeWidth = new THREE.Box3().setFromObject(stripePrototype).size().x;
 
 	//Transition
-	var locations = {
-		"#About"		: new THREE.Vector3(120, 120, 1),
-		"#Activity"		: new THREE.Vector3(-350, -225, 1),
-		"#Competences"	: new THREE.Vector3(420, 25, 1),
-		"#Contact"		: new THREE.Vector3(50, -350, 1),
-		"#Portfolio"	: new THREE.Vector3(-375, 75, 1),
-		"#Resume"		: new THREE.Vector3(565, -240, 1)
+	var positions = {
+		"#About"		: new THREE.Vector3(120, 120, 0),
+		"#Activity"		: new THREE.Vector3(-350, -225,0),
+		"#Competences"	: new THREE.Vector3(420, 25, 0),
+		"#Contact"		: new THREE.Vector3(50, -350, 0),
+		"#Portfolio"	: new THREE.Vector3(-375, 75, 0),
+		"#Resume"		: new THREE.Vector3(565, -240,0)
 	};
 
 	var transitionStarted = false;
@@ -106,33 +108,53 @@ function LoadSiteMap() {
 	var OnTransitionFinish;
 	StartTransition = function(to, onTransitionFinish)
 	{
-		targetLocation = to;
-		transitionStarted = true;
-		OnTransitionFinish = onTransitionFinish;
+		if (to != currentLocation)
+		{
+			targetLocation = to;
+			transitionStarted = true;
+			OnTransitionFinish = onTransitionFinish;
+		}
+		else
+		{
+			onTransitionFinish();
+		}
 	}
 
-	var currentPosition = locations[currentLocation].clone();
+	var currentPosition = positions[currentLocation].clone();
 	var transitionAlpha = 0;
 	var stripes = [];
-	function TransitionStep()
+	var transitionStepTime = 0.3;
+	var transitionStepTimePassed = 0;
+	var xAxis = new THREE.Vector3(1,0,0);
+	function TransitionStep(dt)
 	{
-		if (!transitionStarted)
+		transitionStepTimePassed += dt;
+
+		if (!transitionStarted || transitionStepTimePassed < transitionStepTime)
 			return;
 
-		transitionAlpha += 0.01;
+		transitionStepTimePassed = 0;
 
-		var stripe = stripePrototype.clone();
+		var stripe = stripePrototype.clone();		
 
-		stripe.position.lerpVectors(currentPosition, locations[targetLocation], transitionAlpha);
-		Clamp(stripe.position, currentPosition, locations[targetLocation]);
+
+		var moveDirection = positions[targetLocation].clone().sub(currentPosition);
+		var angle = moveDirection.angleTo(xAxis);
+
+		stripe.rotation.set(0,0,(moveDirection.y < 0) ? -angle : angle);
+		stripe.position.lerpVectors(currentPosition, positions[targetLocation], transitionAlpha);
+		Clamp(stripe.position, currentPosition, positions[targetLocation]);
 		
 		stripes.push(stripe);
 		scene.add(stripe);
 
+		var step = 1/((currentPosition.distanceTo(positions[targetLocation]) / stripeWidth) / 2);
+		transitionAlpha += Math.abs(step);
+
 		//Reset variables for next transition
-		if (stripe.position.equals(locations[targetLocation]))
+		if (stripe.position.equals(positions[targetLocation]))
 		{
-			currentPosition = locations[targetLocation];
+			currentPosition = positions[targetLocation];
 			currentLocation = targetLocation;
 			location.hash = targetLocation;
 			transitionStarted = false;
@@ -211,7 +233,7 @@ function LoadSiteMap() {
 		flameAnimator.update(dt * 1000);
 		AnimateFlameLight(dt);
 
-		TransitionStep();
+		TransitionStep(dt);
 	}
 
 	camera.position.z = 1000;
