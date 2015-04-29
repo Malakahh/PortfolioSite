@@ -77,22 +77,25 @@ function Engine(updateFunc) {
 	this.placementWidth 	= 1600;
 	this.placementHeight	= 839;
 
-	this.renderer.setSize(viewportWidth, viewportHeight);
+	this.renderer.setSize(this.viewportWidth, this.viewportHeight);
 	THREEx.WindowResize(this.renderer, this.camera);
-	this.container.append(this.renderer.domElement);
+	container.append(this.renderer.domElement);
 	this.camera.position.z = 1000;
 
 	this.Update = updateFunc;
-	this.Render();
 }
 
 Engine.prototype.Render = function() {
-	requestAnimationFrame(this.Render);
+	requestAnimationFrame(this.Render.bind(this));
 
 	this.Update(this.clock.getDelta());
 
 	this.renderer.render(this.scene, this.camera);
 }
+
+Engine.prototype.Start = function() {
+	this.Render();
+};
 
 Engine.prototype.GetScaledCoordinate = function(placementCoordinate, scaleAxisSize, axisSize) {
 	return axisSize * placementCoordinate / scaleAxisSize;
@@ -109,8 +112,9 @@ Engine.prototype.GetScaledCoordHeight = function(placementCoordinate) {
 	SiteMap
 */
 function SiteMap() {
-	this.engine = new Engine(this.Update);
+	this.engine = new Engine(this.Update.bind(this));
 	this.Init();
+	this.engine.Start();
 }
 
 SiteMap.prototype.Update = function(dt) {
@@ -130,7 +134,7 @@ SiteMap.prototype.Init = function() {
 		this.engine.viewportHeight,
 		1);
 	var backgroundMaterial 	= new THREE.MeshLambertMaterial({
-		map: THREE.ImageUtils.loadTexture("Assets/map.png");
+		map: THREE.ImageUtils.loadTexture("Assets/map.png")
 	})
 	var background 			= new THREE.Mesh(backgroundGeometry, backgroundMaterial);
 	this.engine.scene.add(background);
@@ -145,6 +149,7 @@ SiteMap.prototype.Init = function() {
 		this.engine.GetScaledCoordWidth(1.3),
 		this.engine.GetScaledCoordWidth(1.3));
 	var jsonLoader		= new THREE.JSONLoader();
+	var self			= this;
 	jsonLoader.load("Assets/Candlestick/candlestick.js", function (geometry) {
 		var material 	= new THREE.MeshLambertMaterial({
 			map: 			THREE.ImageUtils.loadTexture("Assets/Candlestick/diffuse.jpg"),
@@ -156,7 +161,7 @@ SiteMap.prototype.Init = function() {
 		mesh.position.add(candlePosition);
 		mesh.rotation.set(45, 45, 0);
 
-		this.engine.scene.add(mesh);
+		self.engine.scene.add(mesh);
 	});
 
 	//Flame
@@ -174,9 +179,9 @@ SiteMap.prototype.Init = function() {
 
 	flame.scale.set(candleScale.x * 0.5, candleScale.y * 0.5, candleScale.z * 0.5);
 	flame.position.set(
-		candlePosition.x - this.engine.GetScaledCoordinate(9, candleScale.x, 1),
-		candlePosition.y + this.engine.GetScaledCoordinate(90, candleScale.y, 1),
-		candlePosition.z + this.engine.GetScaledCoordinate(270, candleScale.z, 1));
+		candlePosition.x - this.engine.GetScaledCoordWidth(15),
+		candlePosition.y + this.engine.GetScaledCoordHeight(157),
+		candlePosition.z + this.engine.GetScaledCoordWidth(250));
 	this.engine.scene.add(flame);
 
 	this.flameLight 			= {};
@@ -278,7 +283,7 @@ SiteMap.prototype.TransitionStep = function(dt) {
 	var moveDirection = this.transition.locations[this.transition.targetLocation].clone().sub(this.transition.currentLCoord);
 	var angle = moveDirection.angleTo(this.transition.axis);
 
-	stripe.rotation.set(0,0,(moveDirection.y < 0) ? -angle : angle));
+	stripe.rotation.set(0,0,(moveDirection.y < 0) ? -angle : angle);
 	stripe.position.lerpVectors(
 		this.transition.currentLCoord, 
 		this.transition.locations[this.transition.targetLocation],
@@ -290,7 +295,7 @@ SiteMap.prototype.TransitionStep = function(dt) {
 	this.transition.stripes.push(stripe);
 	this.engine.scene.add(stripe);
 
-	var step = 1/((this.transition.currentLCoord.distanceTo(this.transition.targetLocation) / this.stripeWidth) / 2);
+	var step = 1/((this.transition.currentLCoord.distanceTo(this.transition.locations[this.transition.targetLocation]) / this.stripeWidth) / 2);
 	this.transition.alpha += Math.abs(step);
 
 	//Reset variables for next transition

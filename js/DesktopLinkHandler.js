@@ -15,7 +15,8 @@ $(document).ready(function() {
 	ChangeContent(HashToUrl(location.hash));
 
 	//Load map
-	LoadSiteMap();
+	//LoadSiteMap();
+	var siteMap = new SiteMap();
 	var transitionInProgress = false;
 
 	//Intercept nav clicks
@@ -31,7 +32,7 @@ $(document).ready(function() {
 		{
 			transitionInProgress = true
 			$("#content").hide();
-			StartTransition("#" + $(this).html(), OnTransitionEnd);
+			siteMap.StartTransition("#" + $(this).html(), OnTransitionEnd);
 			ChangeContent(event.target);
 		}
 
