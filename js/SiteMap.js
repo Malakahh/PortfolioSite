@@ -149,8 +149,7 @@ SiteMap.prototype.Init = function() {
 		this.engine.GetScaledCoordWidth(1.3),
 		this.engine.GetScaledCoordWidth(1.3));
 	var jsonLoader		= new THREE.JSONLoader();
-	var self			= this;
-	jsonLoader.load("Assets/Candlestick/candlestick.js", function (geometry) {
+	jsonLoader.load("Assets/Candlestick/candlestick.js", (function (geometry) {
 		var material 	= new THREE.MeshLambertMaterial({
 			map: 			THREE.ImageUtils.loadTexture("Assets/Candlestick/diffuse.jpg"),
 			specularMap: 	THREE.ImageUtils.loadTexture("Assets/Candlestick/specular.jpg")
@@ -161,8 +160,8 @@ SiteMap.prototype.Init = function() {
 		mesh.position.add(candlePosition);
 		mesh.rotation.set(45, 45, 0);
 
-		self.engine.scene.add(mesh);
-	});
+		this.engine.scene.add(mesh);
+	}).bind(this));
 
 	//Flame
 	var flameTexture	= new THREE.ImageUtils.loadTexture("Assets/FlameAnimation.png");
