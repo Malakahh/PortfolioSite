@@ -1,0 +1,3 @@
+http://pomax.github.io/bezierjs/
+
+This code is MIT licensed; License text at: http://opensource.org/licenses/MIT
