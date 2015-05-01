@@ -40,18 +40,38 @@ function TextureAnimator(texture, tilesHoriz, tilesVert, numTiles, tileDispDurat
 	};
 }
 
-function Clamp(v, clamp1, clamp2)
+function IsUndefined(x)
 {
-	var xMin = Math.min(clamp1.x, clamp2.x);
-	var xMax = Math.max(clamp1.x, clamp2.x);
-	var yMin = Math.min(clamp1.y, clamp2.y);
-	var yMax = Math.max(clamp1.y, clamp2.y);
-	var zMin = Math.min(clamp1.z, clamp2.z);
-	var zMax = Math.max(clamp1.z, clamp2.z);
+	return typeof x == 'undefined';
+}
 
-	v.x = Math.min(xMax, Math.max(xMin, v.x));
-	v.y = Math.min(yMax, Math.max(yMin, v.y));
-	v.z = Math.min(zMax, Math.max(zMin, v.z));
+function GetBounds(v1, v2)
+{
+	var minV = new THREE.Vector3(),
+		maxV = new THREE.Vector3();
+
+	if (!IsUndefined(v1.x) && !IsUndefined(v2.x))
+	{
+		minV.x = Math.min(v1.x, v2.x);
+		maxV.x = Math.max(v1.x, v2.x);
+	}
+
+	if (!IsUndefined(v1.y) && !IsUndefined(v2.y))
+	{
+		minV.y = Math.min(v1.y, v2.y);
+		maxV.y = Math.max(v1.y, v2.y);
+	}
+
+	if (!IsUndefined(v1.z) && !IsUndefined(v2.z))
+	{
+		minV.z = Math.min(v1.z, v2.z);
+		maxV.z = Math.max(v1.z, v2.z);
+	}
+
+	return {
+		min: minV,
+		max: maxV
+	};
 }
 
 /*
@@ -262,6 +282,76 @@ SiteMap.prototype.StartTransition = function(to, onTransitionFinish) {
 		this.transition.targetLocation 		= to;
 		this.transition.started 			= true;
 		this.transition.OnTransitionFinish 	= onTransitionFinish;
+
+		var startCoords						= this.transition.currentLCoord,
+			endCoords						= this.transition.locations[this.transition.targetLocation],
+			bounds 							= GetBounds(startCoords, endCoords);
+
+		var boundsAdditionX					= this.engine.GetScaledCoordWidth(265),
+			boundsAdditionY					= this.engine.GetScaledCoordHeight(265);
+
+		bounds.max.x 						+= boundsAdditionX;
+		bounds.max.y 						+= boundsAdditionY;
+		bounds.min.x 						-= boundsAdditionX;
+		bounds.min.y 						-= boundsAdditionY;
+
+		var points 							= [];
+		var numPoints						= 2;
+
+		console.log("NumPoints: " + numPoints);
+
+		points[points.length] = {
+			x: startCoords.x,
+			y: startCoords.y
+		};
+
+		while (numPoints-- > 0)
+		{
+			points[points.length] = {
+				x: Math.floor(Math.random() * (bounds.max.x - bounds.min.x)) + bounds.min.x,
+				y: Math.floor(Math.random() * (bounds.max.y - bounds.min.y)) + bounds.min.y 
+			};
+		}
+
+		points[points.length] = {
+			x: endCoords.x,
+			y: endCoords.y
+		};
+
+		this.transition.curve 				= new Bezier(points);
+
+		/*
+		console.table(points);	
+
+		console.log("1: (" + startCoords.x + ", " + startCoords.y + ")");
+		console.log("2: (" + endCoords.x + ", " + endCoords.y + ")");
+
+		console.log("Length: " + this.transition.curve.length());
+
+		var stripe1 = this.stripePrototype.clone(),
+			stripe2 = this.stripePrototype.clone(),
+			stripe3 = this.stripePrototype.clone(),
+			stripe4 = this.stripePrototype.clone(),
+			stripe5 = this.stripePrototype.clone();
+
+		var coord1 = this.transition.curve.get(0),
+			coord2 = this.transition.curve.get(0.25),
+			coord3 = this.transition.curve.get(0.50),
+			coord4 = this.transition.curve.get(0.75),
+			coord5 = this.transition.curve.get(1);
+
+		stripe1.position.set(coord1.x, coord1.y, 1);
+		stripe2.position.set(coord2.x, coord2.y, 1);
+		stripe3.position.set(coord3.x, coord3.y, 1);
+		stripe4.position.set(coord4.x, coord4.y, 1);
+		stripe5.position.set(coord5.x, coord5.y, 1);
+
+		this.engine.scene.add(stripe1);
+		this.engine.scene.add(stripe2);
+		this.engine.scene.add(stripe3);
+		this.engine.scene.add(stripe4);
+		this.engine.scene.add(stripe5);
+		*/
 	}
 	else
 	{
@@ -270,6 +360,56 @@ SiteMap.prototype.StartTransition = function(to, onTransitionFinish) {
 };
 
 SiteMap.prototype.TransitionStep = function(dt) {
+	this.transition.stepTimePassed 	+= dt;
+
+	if (!this.transition.started || this.transition.stepTimePassed < this.transition.stepTime)
+		return;
+
+	this.transition.stepTimePassed 	= 0;
+
+	var pos 						= this.transition.nextPos || this.transition.curve.get(this.transition.alpha);
+	var t 							= 1/((this.transition.curve.length() / this.stripeWidth) * 0.5);	
+	this.transition.alpha 			+= t;
+	this.transition.nextPos 		= this.transition.curve.get(this.transition.alpha + t);
+
+	//Position
+	var stripe 						= this.stripePrototype.clone();
+	stripe.position.set(pos.x, pos.y, 1);
+
+	//Rotation
+	var direction 					= new THREE.Vector3(
+		this.transition.nextPos.x,
+		this.transition.nextPos.y,
+		 1).sub(stripe.position);
+	var angle 						= direction.angleTo(this.transition.axis);
+	stripe.rotation.set(0,0,(direction.y < 0) ? -angle : angle);
+
+	if (this.transition.stripes.length == 0 || stripe.position.distanceTo(this.transition.stripes[this.transition.stripes.length-1].position) > this.stripeWidth * 1.5)
+	{
+		this.transition.stripes.push(stripe);
+		this.engine.scene.add(stripe);
+	}
+
+	//Reset variables for next transition
+	if (this.transition.alpha >= 1)
+	{
+		this.transition.currentLCoord 	= this.transition.locations[this.transition.targetLocation];
+		this.transition.currentLocation = this.transition.targetLocation;
+		location.hash 					= this.transition.targetLocation;
+		this.transition.started 		= false;
+		this.transition.alpha 			= 0;
+		this.transition.nextPos 		= null;
+
+		var s;
+		while (s = this.transition.stripes.pop())
+		{
+			this.engine.scene.remove(s);
+		}
+
+		this.transition.OnTransitionFinish();
+	}
+
+	/*
 	this.transition.stepTimePassed += dt;
 
 	if (!this.transition.started || this.transition.stepTimePassed < this.transition.stepTime)
@@ -282,20 +422,16 @@ SiteMap.prototype.TransitionStep = function(dt) {
 	var moveDirection = this.transition.locations[this.transition.targetLocation].clone().sub(this.transition.currentLCoord);
 	var angle = moveDirection.angleTo(this.transition.axis);
 
-	stripe.rotation.set(0,0,(moveDirection.y < 0) ? -angle : angle);
-	stripe.position.lerpVectors(
-		this.transition.currentLCoord, 
-		this.transition.locations[this.transition.targetLocation],
-		this.transition.alpha);
-	Clamp(stripe.position,
-		this.transition.currentLCoord,
-		this.transition.locations[this.transition.targetLocation]);
+	
+
+
+
 
 	this.transition.stripes.push(stripe);
 	this.engine.scene.add(stripe);
 
-	var step = 1/((this.transition.currentLCoord.distanceTo(this.transition.locations[this.transition.targetLocation]) / this.stripeWidth) / 2);
-	this.transition.alpha += Math.abs(step);
+	//var step = 1/((this.transition.currentLCoord.distanceTo(this.transition.locations[this.transition.targetLocation]) / this.stripeWidth) / 2);
+	//this.transition.alpha += Math.abs(step);
 
 	//Reset variables for next transition
 	if (stripe.position.equals(this.transition.locations[this.transition.targetLocation]))
@@ -314,4 +450,5 @@ SiteMap.prototype.TransitionStep = function(dt) {
 
 		this.transition.OnTransitionFinish();
 	}
+	*/
 };

@@ -27,6 +27,7 @@
 			echo "<script src=\"libs/THREE/three.min.js\"></script>\n" .
 				"<script src=\"libs/THREE/JSONLoader.js\"></script>\n" .
 				"<script src=\"libs/THREE/THREEx.WindowResize.js\"></script>" .
+				"<script src=\"libs/Bezier/bezier.js\"></script>" .
 				"<script>\n" . 
 				$linkHandler . "\n" .
 				$siteMap .
