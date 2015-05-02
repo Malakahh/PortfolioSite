@@ -254,10 +254,9 @@ SiteMap.prototype.Init = function() {
 	this.transition.started 		= false;
 	this.transition.currentLocation = location.hash;
 	this.transition.currentLCoord 	= this.transition.locations[this.transition.currentLocation].clone();
+	this.transition.alphaIncrement	= 0.005;
 	this.transition.alpha 			= 0;
 	this.transition.stripes 		= [];
-	this.transition.stepTime 		= 0.3;
-	this.transition.stepTimePassed 	= 0;
 	this.transition.axis 			= new THREE.Vector3(1,0,0);
 };
 
@@ -319,39 +318,6 @@ SiteMap.prototype.StartTransition = function(to, onTransitionFinish) {
 		};
 
 		this.transition.curve 				= new Bezier(points);
-
-		/*
-		console.table(points);	
-
-		console.log("1: (" + startCoords.x + ", " + startCoords.y + ")");
-		console.log("2: (" + endCoords.x + ", " + endCoords.y + ")");
-
-		console.log("Length: " + this.transition.curve.length());
-
-		var stripe1 = this.stripePrototype.clone(),
-			stripe2 = this.stripePrototype.clone(),
-			stripe3 = this.stripePrototype.clone(),
-			stripe4 = this.stripePrototype.clone(),
-			stripe5 = this.stripePrototype.clone();
-
-		var coord1 = this.transition.curve.get(0),
-			coord2 = this.transition.curve.get(0.25),
-			coord3 = this.transition.curve.get(0.50),
-			coord4 = this.transition.curve.get(0.75),
-			coord5 = this.transition.curve.get(1);
-
-		stripe1.position.set(coord1.x, coord1.y, 1);
-		stripe2.position.set(coord2.x, coord2.y, 1);
-		stripe3.position.set(coord3.x, coord3.y, 1);
-		stripe4.position.set(coord4.x, coord4.y, 1);
-		stripe5.position.set(coord5.x, coord5.y, 1);
-
-		this.engine.scene.add(stripe1);
-		this.engine.scene.add(stripe2);
-		this.engine.scene.add(stripe3);
-		this.engine.scene.add(stripe4);
-		this.engine.scene.add(stripe5);
-		*/
 	}
 	else
 	{
@@ -359,18 +325,13 @@ SiteMap.prototype.StartTransition = function(to, onTransitionFinish) {
 	}
 };
 
-SiteMap.prototype.TransitionStep = function(dt) {
-	this.transition.stepTimePassed 	+= dt;
-
-	if (!this.transition.started || this.transition.stepTimePassed < this.transition.stepTime)
+SiteMap.prototype.TransitionStep = function() {
+	if (!this.transition.started)
 		return;
 
-	this.transition.stepTimePassed 	= 0;
-
 	var pos 						= this.transition.nextPos || this.transition.curve.get(this.transition.alpha);
-	var t 							= 1/((this.transition.curve.length() / this.stripeWidth) * 0.5);	
-	this.transition.alpha 			+= t;
-	this.transition.nextPos 		= this.transition.curve.get(this.transition.alpha + t);
+	this.transition.alpha 			+= this.transition.alphaIncrement;
+	this.transition.nextPos 		= this.transition.curve.get(this.transition.alpha + this.transition.alphaIncrement);
 
 	//Position
 	var stripe 						= this.stripePrototype.clone();
@@ -408,47 +369,4 @@ SiteMap.prototype.TransitionStep = function(dt) {
 
 		this.transition.OnTransitionFinish();
 	}
-
-	/*
-	this.transition.stepTimePassed += dt;
-
-	if (!this.transition.started || this.transition.stepTimePassed < this.transition.stepTime)
-		return;
-
-	this.transition.stepTimePassed = 0;
-
-	var stripe = this.stripePrototype.clone();
-
-	var moveDirection = this.transition.locations[this.transition.targetLocation].clone().sub(this.transition.currentLCoord);
-	var angle = moveDirection.angleTo(this.transition.axis);
-
-	
-
-
-
-
-	this.transition.stripes.push(stripe);
-	this.engine.scene.add(stripe);
-
-	//var step = 1/((this.transition.currentLCoord.distanceTo(this.transition.locations[this.transition.targetLocation]) / this.stripeWidth) / 2);
-	//this.transition.alpha += Math.abs(step);
-
-	//Reset variables for next transition
-	if (stripe.position.equals(this.transition.locations[this.transition.targetLocation]))
-	{
-		this.transition.currentLCoord 	= this.transition.locations[this.transition.targetLocation].clone();
-		this.transition.currentLocation = this.transition.targetLocation;
-		location.hash 					= this.transition.targetLocation;
-		this.transition.started 		= false;
-		this.transition.alpha 			= 0;
-
-		var s;
-		while (s = this.transition.stripes.pop())
-		{
-			this.engine.scene.remove(s);
-		}
-
-		this.transition.OnTransitionFinish();
-	}
-	*/
 };
