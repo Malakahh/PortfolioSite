@@ -306,13 +306,13 @@ SiteMap.prototype.StartTransition = function(to, onTransitionFinish) {
 
 		while (numPoints-- > 0)
 		{
-			points[points.length] = {
+			points[points.length] 			= {
 				x: Math.floor(Math.random() * (bounds.max.x - bounds.min.x)) + bounds.min.x,
 				y: Math.floor(Math.random() * (bounds.max.y - bounds.min.y)) + bounds.min.y 
 			};
 		}
 
-		points[points.length] = {
+		points[points.length] 				= {
 			x: endCoords.x,
 			y: endCoords.y
 		};
