@@ -254,7 +254,7 @@ SiteMap.prototype.Init = function() {
 	this.transition.started 		= false;
 	this.transition.currentLocation = location.hash;
 	this.transition.currentLCoord 	= this.transition.locations[this.transition.currentLocation].clone();
-	this.transition.alphaIncrement	= 0.005;
+	this.transition.alphaIncrement	= 0.01;
 	this.transition.alpha 			= 0;
 	this.transition.stripes 		= [];
 	this.transition.axis 			= new THREE.Vector3(1,0,0);
@@ -330,25 +330,25 @@ SiteMap.prototype.TransitionStep = function() {
 		return;
 
 	var pos 						= this.transition.nextPos || this.transition.curve.get(this.transition.alpha);
+	var stripe 						= this.stripePrototype.clone();
+	stripe.position.set(pos.x, pos.y, 1);
+
 	this.transition.alpha 			+= this.transition.alphaIncrement;
 	this.transition.nextPos 		= this.transition.curve.get(this.transition.alpha + this.transition.alphaIncrement);
 
-	//Position
-	var stripe 						= this.stripePrototype.clone();
-	stripe.material 				= stripe.material.clone();
-	stripe.position.set(pos.x, pos.y, 1);
-
-	//Rotation
-	var direction 					= new THREE.Vector3(
-		this.transition.nextPos.x,
-		this.transition.nextPos.y,
-		 1).sub(stripe.position);
-	var angle 						= direction.angleTo(this.transition.axis);
-	stripe.material.rotation 		= (direction.y < 0) ? -angle : angle;
-
-
+	//Check to only place a stripe once a certain length away from previous length
 	if (this.transition.stripes.length == 0 || stripe.position.distanceTo(this.transition.stripes[this.transition.stripes.length-1].position) > this.stripeWidth * 1.5)
 	{
+		stripe.material 				= stripe.material.clone();
+
+		//Rotation
+		var direction 					= new THREE.Vector3(
+			this.transition.nextPos.x,
+			this.transition.nextPos.y,
+			 1).sub(stripe.position);
+		var angle 						= direction.angleTo(this.transition.axis);
+		stripe.material.rotation 		= (direction.y < 0) ? -angle : angle;
+
 		this.transition.stripes.push(stripe);
 		this.engine.scene.add(stripe);
 	}
