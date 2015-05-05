@@ -215,11 +215,11 @@ SiteMap.prototype.Init = function() {
 	this.engine.scene.add(this.flamePointLight);
 
 	//Stripe prototype
-	var stripeGeometry 		= new THREE.PlaneGeometry(30, 10, 0);
-	var stripeMaterial 		= new THREE.MeshLambertMaterial({
+	this.stripeMaterial		= new THREE.SpriteMaterial({
 		map: THREE.ImageUtils.loadTexture("Assets/stripe.png")
 	});
-	this.stripePrototype 	= new THREE.Mesh(stripeGeometry, stripeMaterial);
+	this.stripePrototype	= new THREE.Sprite(this.stripeMaterial);
+	this.stripePrototype.scale.set(30, 10, 1);
 	this.stripeWidth 		= new THREE.Box3().setFromObject(this.stripePrototype).size().x;
 
 	//Transition
@@ -335,6 +335,7 @@ SiteMap.prototype.TransitionStep = function() {
 
 	//Position
 	var stripe 						= this.stripePrototype.clone();
+	stripe.material 				= stripe.material.clone();
 	stripe.position.set(pos.x, pos.y, 1);
 
 	//Rotation
@@ -343,7 +344,8 @@ SiteMap.prototype.TransitionStep = function() {
 		this.transition.nextPos.y,
 		 1).sub(stripe.position);
 	var angle 						= direction.angleTo(this.transition.axis);
-	stripe.rotation.set(0,0,(direction.y < 0) ? -angle : angle);
+	stripe.material.rotation 		= (direction.y < 0) ? -angle : angle;
+
 
 	if (this.transition.stripes.length == 0 || stripe.position.distanceTo(this.transition.stripes[this.transition.stripes.length-1].position) > this.stripeWidth * 1.5)
 	{
