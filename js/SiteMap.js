@@ -100,9 +100,9 @@ function Engine(updateFunc) {
 	this.renderer.setSize(this.viewportWidth, this.viewportHeight);
 	THREEx.WindowResize(this.renderer, this.camera);
 	container.append(this.renderer.domElement);
-	this.camera.position.z = 1000;
+	this.camera.position.z 	= 1000;
 
-	this.Update = updateFunc;
+	this.Update 			= updateFunc;
 }
 
 Engine.prototype.Render = function() {
