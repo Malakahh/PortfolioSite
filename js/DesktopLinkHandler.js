@@ -5,7 +5,7 @@ function HashToUrl(hash)
 
 function ChangeContent(target) {
 	$.get(target, function(data) {
-		$("#content").html(data); //override page content with new content
+		$("#middle").html(data); //override page content with new content
 	});
 }
 

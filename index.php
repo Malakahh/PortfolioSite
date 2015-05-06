@@ -17,7 +17,13 @@
 	</head>
 	<body>
 		<?php include "navigation.php"; ?>
-		<div id="content">
+		<div id="content">	
+			<div id="top">
+			</div>
+			<div id="middle">
+			</div>
+			<div id="bottom"/>
+			</div>
 		</div>
 	</body>
 </html>
