@@ -24,7 +24,7 @@ body
 #middle
 {
 	background-image: url("Assets/middle.png");
-	background-size: 100%;
+	background-size: 100% 723px;
 	background-repeat: repeat-y;
 	width: 100%;
 }
@@ -45,8 +45,6 @@ body
 #content
 {
 	margin: auto;
-	margin-top: 50px;
-	
 
 	min-width: 768px;
 	max-width: 960px;
