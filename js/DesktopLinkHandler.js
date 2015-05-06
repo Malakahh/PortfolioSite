@@ -15,7 +15,6 @@ $(document).ready(function() {
 	ChangeContent(HashToUrl(location.hash));
 
 	//Load map
-	//LoadSiteMap();
 	var siteMap = new SiteMap();
 	var transitionInProgress = false;
 

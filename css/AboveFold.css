@@ -29,3 +29,11 @@ canvas
 	top: 0px;
 	z-index: -1000;
 }
+
+.PortfolioImage
+{
+	position: relative;
+	height: inherit;
+	width:auto;
+	max-width:100%;
+}

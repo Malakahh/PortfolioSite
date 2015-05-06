@@ -26,9 +26,11 @@
 
 			echo "<script src=\"libs/THREE/three.min.js\"></script>\n" .
 				"<script src=\"libs/THREE/JSONLoader.js\"></script>\n" .
-				"<script src=\"libs/THREE/THREEx.WindowResize.js\"></script>" .
-				"<script src=\"libs/Bezier/bezier.js\"></script>" .
+				"<script src=\"libs/THREE/THREEx.WindowResize.js\"></script>\n" .
+				"<script src=\"libs/Bezier/bezier.js\"></script>\n" .
+				"<script src=\"libs/MalImageZoom/MalImageZoom.js\"></script>\n" .
 				"<script>\n" . 
+				"MalImageZoom(new MalImageZoomDescription());\n" .
 				$linkHandler . "\n" .
 				$siteMap .
 				"\n</script>";
