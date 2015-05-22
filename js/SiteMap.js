@@ -1,3 +1,7 @@
+/// <reference path="../libs/THREE/three.min.js" />
+/// <reference path="../libs/THREE/THREEx.WindowResize.js" />
+/// <reference path="../libs/Bezier/bezier.js" />
+
 /*
 	Utilities
 */
@@ -42,7 +46,7 @@ function TextureAnimator(texture, tilesHoriz, tilesVert, numTiles, tileDispDurat
 
 function IsUndefined(x)
 {
-	return typeof x == 'undefined';
+	return typeof x === 'undefined';
 }
 
 function GetBounds(v1, v2)
@@ -111,7 +115,7 @@ Engine.prototype.Render = function() {
 	this.Update(this.clock.getDelta());
 
 	this.renderer.render(this.scene, this.camera);
-}
+};
 
 Engine.prototype.Start = function() {
 	this.Render();
@@ -131,9 +135,9 @@ Engine.prototype.GetScaledCoordHeight = function(placementCoordinate) {
 /*
 	SiteMap
 */
-function SiteMap() {
+function SiteMap(category) {
 	this.engine = new Engine(this.Update.bind(this));
-	this.Init();
+	this.Init(category);
 	this.engine.Start();
 }
 
@@ -143,7 +147,7 @@ SiteMap.prototype.Update = function(dt) {
 	this.TransitionStep(dt);
 };
 
-SiteMap.prototype.Init = function() {
+SiteMap.prototype.Init = function(category) {
 	//Ambient Light
 	var ambientLight = new THREE.AmbientLight(0xB18260);
 	this.engine.scene.add(ambientLight);
@@ -155,7 +159,7 @@ SiteMap.prototype.Init = function() {
 		1);
 	var backgroundMaterial 	= new THREE.MeshLambertMaterial({
 		map: THREE.ImageUtils.loadTexture("Assets/map.png")
-	})
+	});
 	var background 			= new THREE.Mesh(backgroundGeometry, backgroundMaterial);
 	this.engine.scene.add(background);
 
@@ -225,34 +229,34 @@ SiteMap.prototype.Init = function() {
 	//Transition
 	this.transition = {};
 	this.transition.locations = {
-		"#About"		: new THREE.Vector3(
+		"About"		: new THREE.Vector3(
 			this.engine.GetScaledCoordWidth(120),
 			this.engine.GetScaledCoordHeight(120),
 			0),
-		"#Activity"		: new THREE.Vector3(
+		"Activity"		: new THREE.Vector3(
 			this.engine.GetScaledCoordWidth(-350),
 			this.engine.GetScaledCoordHeight(-255),
 			0),
-		"#Competences"	: new THREE.Vector3(
+		"Competences"	: new THREE.Vector3(
 			this.engine.GetScaledCoordWidth(420),
 			this.engine.GetScaledCoordHeight(25),
 			0),
-		"#Contact"		: new THREE.Vector3(
+		"Contact"		: new THREE.Vector3(
 			this.engine.GetScaledCoordWidth(50),
 			this.engine.GetScaledCoordHeight(-350),
 			0),
-		"#Portfolio"	: new THREE.Vector3(
+		"Portfolio"	: new THREE.Vector3(
 			this.engine.GetScaledCoordWidth(-375),
 			this.engine.GetScaledCoordHeight(75),
 			0),
-		"#Resume"		: new THREE.Vector3(
+		"Resume"		: new THREE.Vector3(
 			this.engine.GetScaledCoordWidth(565),
 			this.engine.GetScaledCoordHeight(-240),
 			0)
 	};
 
 	this.transition.started 		= false;
-	this.transition.currentLocation = location.hash;
+	this.transition.currentLocation = category;
 	this.transition.currentLCoord 	= this.transition.locations[this.transition.currentLocation].clone();
 	this.transition.alphaIncrement	= 0.005;
 	this.transition.alpha 			= 0;
@@ -276,6 +280,8 @@ SiteMap.prototype.AnimateFlameLight = function(dt) {
 };
 
 SiteMap.prototype.StartTransition = function(to, onTransitionFinish) {
+	console.log("whee" + to);
+
 	if (to != this.transition.currentLocation)
 	{
 		this.transition.targetLocation 		= to;
@@ -358,7 +364,7 @@ SiteMap.prototype.TransitionStep = function() {
 	{
 		this.transition.currentLCoord 	= this.transition.locations[this.transition.targetLocation];
 		this.transition.currentLocation = this.transition.targetLocation;
-		location.hash 					= this.transition.targetLocation;
+		//location.hash 					= this.transition.targetLocation;
 		this.transition.started 		= false;
 		this.transition.alpha 			= 0;
 		this.transition.nextPos 		= null;
