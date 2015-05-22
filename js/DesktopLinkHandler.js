@@ -84,6 +84,7 @@ $(document).ready(function() {
 		if (!transitionInProgress)
 		{
 			category = $(this).html();
+			item = undefined;
 			
 			if (siteList.hasOwnProperty(category))
 			{
