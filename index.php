@@ -6,15 +6,17 @@
 	$ssHandler = new StylesheetHandler();
 	$jsHandler = new JSHandler();
 ?>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="UTF-8">
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<!--><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script></!-->
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link href='http://aon-cdn.googlecode.com/files/myriadpro-regular_0.ttf' rel='stylesheet' type='text/css'>
 		<?php
 			echo "<base href=\"" . LOC_BASE . "\"/>";
 			$ssHandler->UseStylesheet();
-			$jsHandler->UseJS();
 		?>
 	</head>
 	<body>
@@ -22,10 +24,15 @@
 		<div id="content">	
 			<div id="top">
 			</div>
-			<div id="middle">
+			<div id="middleWrapper">
+				<div id="middle">
+				</div>
 			</div>
 			<div id="bottom"/>
 			</div>
 		</div>
+		<?php
+			$jsHandler->UseJS();
+		?>
 	</body>
 </html>

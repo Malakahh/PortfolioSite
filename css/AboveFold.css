@@ -1,76 +1,92 @@
 body
 {
-	margin: 0px 0px 0px 0px;
+	margin: 		0px 0px 0px 0px;
+	font-family: 	"Myriad Pro";
 }
 
 #top
 {
-	background-image: url("Assets/top.png");
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
-	width: 100%;
-	height: 189px;
+	background-image: 	url("Assets/top.png");
+	background-size: 	100% 100%;
+	background-repeat: 	no-repeat;
+	width: 				100%;
+	height: 			189px;
 }
 
 #bottom
 {
-	background-image: url("Assets/bottom.png");
-	background-size: 100% 100%;
-	background-repeat: no-repeat;
-	width: 100%;
-	height: 166px;
+	background-image: 	url("Assets/bottom.png");
+	background-size: 	100% 100%;
+	background-repeat: 	no-repeat;
+	width: 				100%;
+	height: 			166px;
+}
+
+h1 {
+	text-align: center;
+}
+
+#middleWrapper
+{
+	background-image: 	url("Assets/middle.png");
+	background-size: 	100% 723px;
+	background-repeat: 	repeat-y;
+	width: 				100%;
 }
 
 #middle
 {
-	background-image: url("Assets/middle.png");
-	background-size: 100% 723px;
-	background-repeat: repeat-y;
-	width: 100%;
+	margin-top: 	0px;
+	margin-bottom: 	0px;
+	padding-left: 	150px;
+	padding-right: 	150px;
 }
-#middle p
-{
-	margin-top: 0px;
-	margin-bottom: 0px;
-	padding-left: 130px;
-	padding-right: 130px;
+
+#middle h1 {
+	margin-top: 	0px;
+	margin-bottom:  0px;
 }
-#middle h1
-{
-	margin-top: 0px;
-	margin-bottom: 0px;
-	padding-left: 130px;
-	padding-right: 130px;
+
+#middle p {
+	margin-top: 	0px;
+	margin-bottom:  0px;
+	padding-top: 	10px;
 }
+
+#middle h2 {
+	margin-bottom: 	0px;
+}
+
+#middle ul {
+	margin-top: 	0px;
+	margin-bottom: 	0px;
+}
+
 #content
 {
-	margin: auto;
+	margin: 		auto;
 
-	min-width: 768px;
-	max-width: 960px;
+	min-width: 		768px;
+	max-width: 		960px;
 
-	/*background-color: #A35200;*/
-	/*background-image: url("Assets/Scroll-Large1.png");
-	background-size: 100% 100%;
-	background-repeat: no-repeat;*/
-	padding-left: 140px;
-	padding-right: 150px;
-	padding-top: 50px;
+	padding-left: 	140px;
+	padding-right: 	150px;
+	padding-top: 	50px;
 	padding-bottom: 75px;
 }
 
 canvas
 {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	z-index: -1000;
+	position: 	fixed;
+	left: 		0px;
+	top: 		0px;
+	z-index: 	-1000;
 }
 
 .PortfolioImage
 {
-	position: relative;
-	height: inherit;
-	width:auto;
-	max-width:100%;
+	position: 	relative;
+	height: 	inherit;
+	width: 		auto;
+	max-width: 	100%;
 }

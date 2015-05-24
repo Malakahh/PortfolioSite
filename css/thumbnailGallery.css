@@ -1,0 +1,36 @@
+.thumbnailContainer {
+	width: 		    80%;
+	margin: 	    30px auto 0px auto;
+	overflow: 	    hidden;
+    
+    padding-left:   0px;
+    padding-right:  0px;
+}
+
+.thumbnailItem {
+    float:      left;
+    
+    width:      46%;
+    margin:     2% 2% 50px 2%;
+}
+
+.thumbnailItem h2 {
+    margin-bottom:  0px;
+}
+
+.thumbnailItem h5 {
+    margin-top:     5px;
+    margin-bottom:  5px;
+}
+ 
+.thumbnailItem img {
+    max-width:              100%;
+    -webkit-border-radius:  5px;
+    -moz-border-radius:     5px;
+    border-radius:          5px;
+}
+
+.thumbnailItem p {
+    height:     100px;
+    overflow:   hidden;
+}

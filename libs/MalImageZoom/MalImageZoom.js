@@ -10,7 +10,7 @@ function MalImageZoom (IZDesc)
 {
 	var time = 750;
 
-	var prevTop, prevLeft, prevW, prevH;
+	var prevTop, prevLeft, prevW, prevH, prevPos;
 	var prevParent;
 	var newTop;
 
@@ -34,7 +34,7 @@ function MalImageZoom (IZDesc)
 
 		var newHeight 	= $(window).height() - 50;
 		var newWidth 	= prevW * (newHeight / prevH);
-		if (newWidth > $(window).width() - 50)
+		if (newWidth >= $(window).width() - 50)
 		{
 			newWidth 	= $(window).width() - 50;
 			newHeight 	= prevH * (newWidth / prevW);
@@ -99,5 +99,5 @@ function MalImageZoom (IZDesc)
 			ZoomIn($(this));
 			return false;
 		});
-	})
+	});
 }

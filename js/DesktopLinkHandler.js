@@ -11,11 +11,9 @@ function DecodeUrl(url)
 	var split = pageUrl.split('/');
 	category = (typeof split[2] !== "undefined" && split[2].length > 0) ? split[2] : undefined;
 	item = (typeof split[3] !== "undefined" && split[3].length > 0) ? split[3] : undefined;
-	console.log("Decode - category: " + category + " item: " + item);
 }
 
 function EncodeUrl() {
-	console.log("Encode - category: " + category + " item: " + item);
 	var base = "/PortfolioSite/";
 	
 	if (typeof category !== "undefined" && siteList.hasOwnProperty(category))
@@ -40,6 +38,22 @@ function EncodeUrl() {
 	}
 }
 
+function Rebind()
+{
+	$(".internallink").click(function(event) {
+		event.preventDefault();
+		DecodeUrl($(this).prop("href").split("//")[1]);
+		ChangeContent(EncodeUrl());
+	});
+}
+
+var scriptStateChange = false;
+function PushState(data,title,url) {
+	scriptStateChange = true;
+	History.pushState(data, title, url);
+	scriptStateChange = false;
+}
+
 function ChangeContent(target) {
 	$.get(target, function(data) {
 		if (target != undefined)
@@ -53,23 +67,38 @@ function ChangeContent(target) {
 					url += item;
 				}
 			}
-			
-			console.log("url: " + url);
-			History.pushState(null, null, url);
+
+			PushState(null, null, url);
 			$("#middle").html(data); //override page content with new content
+			Rebind();
 		}
 	});
 }
 
 $(document).ready(function() {
-	DecodeUrl();
-
-	category = (typeof category === 'undefined') ? "About" : category;
-
-	ChangeContent(EncodeUrl());
+	var siteMap;
+	
+	window.onstatechange = function () {
+		if (!scriptStateChange)
+		{
+			DecodeUrl();
+			category = (typeof category === 'undefined') ? "About" : category;
+			
+			if (typeof siteMap !== "undefined")
+			{
+				console.log("Category: " + category);
+				siteMap.transition.currentLocation = category;
+				siteMap.transition.currentLCoord = siteMap.transition.locations[category].clone();
+			}
+			
+			ChangeContent(EncodeUrl());
+		}
+	};
+	
+	window.onstatechange();
 
 	//Load map
-	var siteMap = new SiteMap((siteList.hasOwnProperty(category)) ? category : "About");
+	siteMap = new SiteMap((siteList.hasOwnProperty(category)) ? category : "About");
 	var transitionInProgress = false;
 
 	//Intercept nav clicks
@@ -96,4 +125,6 @@ $(document).ready(function() {
 			ChangeContent(event.target);
 		}
 	});
+	
+	
 });
