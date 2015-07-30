@@ -364,7 +364,6 @@ SiteMap.prototype.TransitionStep = function() {
 	{
 		this.transition.currentLCoord 	= this.transition.locations[this.transition.targetLocation];
 		this.transition.currentLocation = this.transition.targetLocation;
-		//location.hash 					= this.transition.targetLocation;
 		this.transition.started 		= false;
 		this.transition.alpha 			= 0;
 		this.transition.nextPos 		= null;

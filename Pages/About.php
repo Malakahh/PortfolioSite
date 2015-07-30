@@ -1,9 +1,7 @@
 <h1>About</h1>
-<div style="margin-left: auto; margin-right: auto; height: 250px; width:225px;">
-	<div style="display:inline-block;">
-		<img class="PortfolioImage MalImageZoom" src="Assets/About/me.png"/>
-	</div>
-</div>
+	<a href="Assets/About/me.png" data-lightbox="moop">
+		<img src="Assets/About/me.png"/>
+	</a>
 <p>
 	Hi! I'm Michael Fuglsang, and welcome to my little corner of the internet.
 	In my sparetime I enjoy playing video games, most recently League of Legends and Europa Universalis IV.

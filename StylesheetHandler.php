@@ -23,7 +23,8 @@
 		{
 			$aboveFoldStyle = file_get_contents(DIR_CSS . "AboveFold.css");
 			$navStyle = file_get_contents(DIR_CSS . "navigation.css");
-			echo "<style>\n" . $aboveFoldStyle . "\n" . $navStyle . "\n</style>";
+			$lightbox = file_get_contents(DIR_CSS . "lightbox.css");
+			echo "<style>\n" . $aboveFoldStyle . "\n" . $navStyle . "\n" . $lightbox . "\n</style>";
 		}
 	}
 ?>
