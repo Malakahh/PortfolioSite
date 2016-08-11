@@ -28,7 +28,10 @@
 		<div class="container-fluid">
 			<h1>Portfolio</h1>
 			<div class="videoContainer">
-				<video class="videoBackground" src="Assets/scouts/scouts.mp4" autoplay loop muted poster="Assets/Ic_play_circle_outline_48px.svg.png"></video>
+				<div class="videoOverlayPlayBtnSizer">
+					<video class="videoBackground" src="Assets/scouts/scouts.mp4" poster="Assets/scouts/scoutsFirstFrame.png" autoplay loop muted></video>
+					<div class="videoOverlayPlayBtn"></div>
+				</div>
 				<div class="videoOverlay">
 					<div class="row videoOverlayContent">
 						<div class="col-xs-2 col-md-4"></div>
@@ -74,7 +77,10 @@
 			</div>
 
 			<div class="videoContainer">
-				<video class="videoBackground" src="Assets/scouts/scouts.mp4" autoplay loop muted></video>
+				<div class="videoOverlayPlayBtnSizer">
+					<video class="videoBackground" src="Assets/scouts/scouts.mp4" poster="Assets/scouts/scoutsFirstFrame.png" autoplay loop muted></video>
+					<div class="videoOverlayPlayBtn"></div>
+				</div>
 				<div class="videoOverlay">
 					<div class="row videoOverlayContent">
 						<div class="col-xs-2 col-md-4"></div>
@@ -119,7 +125,10 @@
 			</div>
 
 			<div class="videoContainer">
-				<video class="videoBackground" src="Assets/scouts/scouts.mp4" autoplay loop muted></video>
+				<div class="videoOverlayPlayBtnSizer">
+					<video class="videoBackground" src="Assets/scouts/scouts.mp4" poster="Assets/scouts/scoutsFirstFrame.png" autoplay loop muted></video>
+					<div class="videoOverlayPlayBtn"></div>
+				</div>
 				<div class="videoOverlay">
 					<div class="row videoOverlayContent">
 						<div class="col-xs-2 col-md-4"></div>
