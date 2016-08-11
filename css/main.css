@@ -1,0 +1,183 @@
+html, body {
+   height: 100%;
+   width: 100%;
+   margin: 0;
+   padding: 0;
+   position: absolute;
+
+   background-color: #f1f1f1;
+
+   font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+   color: #333333;
+}
+
+.intro {
+	background-image: url("../assets/Metemp.jpg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+
+	width: 100%;
+	min-height: 50%;
+	text-align: center;
+
+	position: relative;
+}
+
+.intro h1 {
+	color: white;
+	font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-style: italic;
+
+	padding-bottom: 5px;
+	padding-top: 5px;
+	border-width: 3px 0px 3px;
+	border-style: solid;
+	border-color: white;
+}
+
+.introSignature {
+	width: 100%;
+	position: absolute;
+	bottom: 10px;
+}
+
+.videoContainer {
+	position: relative; 
+	margin-bottom: 2px;
+}
+
+.videoBackground {
+	min-width: 100%;
+	min-height: 100%;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+
+.videoOverlayContent {
+    z-index:2;
+}
+
+h1 {
+	margin-top: 5%;
+	margin-bottom: 5%;
+	text-align: center;
+}
+
+.container-fluid {
+	padding: 0px;
+}
+
+.scoutsTitle {
+	width: 100%;
+	height: 100%;
+	margin-top: -10%;
+}
+
+.row {
+	margin: 0px;
+}
+
+.bottomSpacing {
+	margin-bottom: 15px;
+}
+
+p {
+	margin-top: 10%;
+	margin-bottom: 0px;
+}
+
+.modalImgHeadline {
+	width: 50%;
+	margin-left: 25%;
+}
+
+.modalBtnClose {
+	width: 100%;
+}
+
+.close-modal {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 75px;
+    height: 75px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    opacity: .3;
+}
+
+.close-modal .lr {
+    z-index: 1051;
+    width: 1px;
+    height: 75px;
+    margin-left: 35px;
+    background-color: #222;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.close-modal .lr .rl {
+    z-index: 1052;
+    width: 1px;
+    height: 75px;
+    background-color: #222;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.portfolioItem {
+	margin-top: 2em;
+}
+
+.portfolioItem a {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+.portfolioClickable {
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	background-color: #ffffff;
+}
+
+.portfolioClickable:hover {
+	background-color: #e0e0e0;
+}
+
+@media (min-width: 992px) {
+	.intro {
+		height: 100%;
+	}
+
+	.intro h1 {
+		width: 50%;
+		margin-left: 25%;
+	}
+
+	.scoutsTitle {
+		margin-bottom: 0px;
+		margin-top: 15%;
+	}
+
+	.videoOverlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.8);
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		
+		color: white;
+		font-size: 2em;
+	}
+}
