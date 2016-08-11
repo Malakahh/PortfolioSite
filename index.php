@@ -44,8 +44,7 @@
 						<div class="col-xs-1 col-md-2"></div>
 						<div class="col-xs-10 col-md-8">
 							<p>
-								Join Billy Bullseye, Tina Ties-A-Knot, and Chubby Chuck on their scouting adventures.
-								Collect plants, spot animals and navigate obstacles, but watch out for bears...
+								Some quick notes on technologies used, key topics, etc.
 							</p>
 							<p>	
 								<div class="row">
@@ -292,6 +291,8 @@
 							</div>
 						</div>
 						<img class="modalImgHeadline" src="Assets/scouts/scoutsTitle.png">
+						<p>Join Billy Bullseye, Tina Ties-A-Knot, and Chubby Chuck on their scouting adventures.
+							Collect plants, spot animals and navigate obstacles, but watch out for bears...</p>
 						<p>A more detailed text...</p>
 						<div class="row">
 							<div class="col-xs-4 col-md-5"></div>
