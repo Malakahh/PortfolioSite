@@ -19,7 +19,7 @@
 				<div class="col-xs-2 col-md-4"></div>
 				<div class="col-xs-8 col-md-4">
 					<h1>
-						Greetings! I'm Michael
+						Greetings!<br>I'm Michael
 					</h1>
 				</div>
 				<div class="col-xs-2 col-md-4"></div>
@@ -28,12 +28,12 @@
 		<div class="container-fluid">
 			<h1>Portfolio</h1>
 			<div class="videoContainer">
-				<video class="videoBackground" src="assets/scouts/scouts.mp4" autoplay loop></video>
+				<video class="videoBackground" src="Assets/scouts/scouts.mp4" autoplay loop muted poster="Assets/Ic_play_circle_outline_48px.svg.png"></video>
 				<div class="videoOverlay">
 					<div class="row videoOverlayContent">
 						<div class="col-xs-2 col-md-4"></div>
 						<div class="col-xs-8 col-md-4">
-							<img class="scoutsTitle" src="assets/scouts/scoutsTitle.png">
+							<img class="scoutsTitle" src="Assets/scouts/scoutsTitle.png">
 						</div>
 						<div class="col-xs-2 col-md-4"></div>
 					</div>
@@ -41,24 +41,24 @@
 						<div class="col-xs-1 col-md-2"></div>
 						<div class="col-xs-10 col-md-8">
 							<p>
-							Join Billy Bullseye, Tina Ties-A-Knot, and Chubby Chuck on their scouting adventures.
-							Collect plants, spot animals and navigate obstacles, but watch out for bears...
+								Join Billy Bullseye, Tina Ties-A-Knot, and Chubby Chuck on their scouting adventures.
+								Collect plants, spot animals and navigate obstacles, but watch out for bears...
 							</p>
 							<p>	
 								<div class="row">
 									<div class="col-md-2 bottomSpacing">
 										<a target="_blank" href="https://play.google.com/store/apps/details?id=dk.dadiu.scouts&hl=da">
-											<img src="assets\Get_it_on_Google_play.svg">
+											<img src="Assets\Get_it_on_Google_play.svg">
 										</a>
 									</div>
 									<div class="col-md-2 bottomSpacing">
 										<a target="_blank" href="https://itunes.apple.com/us/app/scouts/id958947631?mt=8&ign-mpt=uo%3D4">
-											<img src="assets\Available_on_the_App_Store_(black)_SVG.svg">
+											<img src="Assets\Available_on_the_App_Store_(black)_SVG.svg">
 										</a>
 									</div>
 									<div class="col-md-2 bottomSpacing">
 										<a target="_blank" href="http://www.example.com">
-											<img src="assets\Windows_logo_-_2012.svg">
+											<img src="Assets\Windows_logo_-_2012.svg">
 										</a>
 									</div>
 									<div class="col-md-4 bottomSpacing"></div>
@@ -74,12 +74,12 @@
 			</div>
 
 			<div class="videoContainer">
-				<video class="videoBackground" src="assets/scouts/scouts.mp4" autoplay loop></video>
+				<video class="videoBackground" src="Assets/scouts/scouts.mp4" autoplay loop muted></video>
 				<div class="videoOverlay">
 					<div class="row videoOverlayContent">
 						<div class="col-xs-2 col-md-4"></div>
 						<div class="col-xs-8 col-md-4">
-							<img class="scoutsTitle" src="assets/scouts/scoutsTitle.png">
+							<img class="scoutsTitle" src="Assets/scouts/scoutsTitle.png">
 						</div>
 						<div class="col-xs-2 col-md-4"></div>
 					</div>
@@ -93,17 +93,17 @@
 								<div class="row">
 									<div class="col-md-2 bottomSpacing">
 										<a target="_blank" href="https://play.google.com/store/apps/details?id=dk.dadiu.scouts&hl=da">
-											<img src="assets\Get_it_on_Google_play.svg">
+											<img src="Assets\Get_it_on_Google_play.svg">
 										</a>
 									</div>
 									<div class="col-md-2 bottomSpacing">
 										<a target="_blank" href="https://itunes.apple.com/us/app/scouts/id958947631?mt=8&ign-mpt=uo%3D4">
-											<img src="assets\Available_on_the_App_Store_(black)_SVG.svg">
+											<img src="Assets\Available_on_the_App_Store_(black)_SVG.svg">
 										</a>
 									</div>
 									<div class="col-md-2 bottomSpacing">
 										<a target="_blank" href="http://www.example.com">
-											<img src="assets\Windows_logo_-_2012.svg">
+											<img src="Assets\Windows_logo_-_2012.svg">
 										</a>
 									</div>
 									<div class="col-md-4 bottomSpacing"></div>
@@ -119,12 +119,12 @@
 			</div>
 
 			<div class="videoContainer">
-				<video class="videoBackground" src="assets/scouts/scouts.mp4" autoplay loop></video>
+				<video class="videoBackground" src="Assets/scouts/scouts.mp4" autoplay loop muted></video>
 				<div class="videoOverlay">
 					<div class="row videoOverlayContent">
 						<div class="col-xs-2 col-md-4"></div>
 						<div class="col-xs-8 col-md-4">
-							<img class="scoutsTitle" src="assets/scouts/scoutsTitle.png">
+							<img class="scoutsTitle" src="Assets/scouts/scoutsTitle.png">
 						</div>
 						<div class="col-xs-2 col-md-4"></div>
 					</div>
@@ -138,17 +138,17 @@
 								<div class="row">
 									<div class="col-md-2 bottomSpacing">
 										<a target="_blank" href="https://play.google.com/store/apps/details?id=dk.dadiu.scouts&hl=da">
-											<img src="assets\Get_it_on_Google_play.svg">
+											<img src="Assets\Get_it_on_Google_play.svg">
 										</a>
 									</div>
 									<div class="col-md-2 bottomSpacing">
 										<a target="_blank" href="https://itunes.apple.com/us/app/scouts/id958947631?mt=8&ign-mpt=uo%3D4">
-											<img src="assets\Available_on_the_App_Store_(black)_SVG.svg">
+											<img src="Assets\Available_on_the_App_Store_(black)_SVG.svg">
 										</a>
 									</div>
 									<div class="col-md-2 bottomSpacing">
 										<a target="_blank" href="http://www.example.com">
-											<img src="assets\Windows_logo_-_2012.svg">
+											<img src="Assets\Windows_logo_-_2012.svg">
 										</a>
 									</div>
 									<div class="col-md-4 bottomSpacing"></div>
@@ -282,7 +282,7 @@
 								<div class="rl"></div>
 							</div>
 						</div>
-						<img class="modalImgHeadline" src="assets/scouts/scoutsTitle.png">
+						<img class="modalImgHeadline" src="Assets/scouts/scoutsTitle.png">
 						<p>A more detailed text...</p>
 						<div class="row">
 							<div class="col-xs-4 col-md-5"></div>
@@ -296,8 +296,11 @@
 			</div>
 		</div>
 
+		<footer></footer>
+
 		<!-- JavaScript -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="js/videoPlay.js"></script>
 	</body>
 </html>
