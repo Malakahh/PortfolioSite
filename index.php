@@ -28,10 +28,7 @@
 		<div class="container-fluid">
 			<h1>Portfolio</h1>
 			<div class="videoContainer">
-				<div class="videoOverlayPlayBtnSizer">
-					<video class="videoBackground" src="Assets/scouts/scouts.mp4" poster="Assets/scouts/scoutsFirstFrame.png" autoplay loop muted></video>
-					<div class="videoOverlayPlayBtn"></div>
-				</div>
+				<video class="video-js vjs-default-skin videoBackground " src="Assets/scouts/scouts.mp4" poster="Assets/scouts/scoutsFirstFrame.png" autoplay loop muted data-setup="{}"></video>
 				<div class="videoOverlay">
 					<div class="row videoOverlayContent">
 						<div class="col-xs-2 col-md-4"></div>
@@ -76,10 +73,9 @@
 			</div>
 
 			<div class="videoContainer">
-				<div class="videoOverlayPlayBtnSizer">
-					<video class="videoBackground" src="Assets/scouts/scouts.mp4" poster="Assets/scouts/scoutsFirstFrame.png" autoplay loop muted></video>
-					<div class="videoOverlayPlayBtn"></div>
-				</div>
+
+				<video class="videoBackground" src="Assets/scouts/scouts.mp4" poster="Assets/scouts/scoutsFirstFrame.png" autoplay loop muted></video>
+
 				<div class="videoOverlay">
 					<div class="row videoOverlayContent">
 						<div class="col-xs-2 col-md-4"></div>
@@ -124,10 +120,9 @@
 			</div>
 
 			<div class="videoContainer">
-				<div class="videoOverlayPlayBtnSizer">
+
 					<video class="videoBackground" src="Assets/scouts/scouts.mp4" poster="Assets/scouts/scoutsFirstFrame.png" autoplay loop muted></video>
-					<div class="videoOverlayPlayBtn"></div>
-				</div>
+
 				<div class="videoOverlay">
 					<div class="row videoOverlayContent">
 						<div class="col-xs-2 col-md-4"></div>
@@ -311,6 +306,6 @@
 		<!-- JavaScript -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		<script src="js/videoPlay.js"></script>
+		<!--script src="js/videoPlay.js"></script-->
 	</body>
 </html>
