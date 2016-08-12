@@ -26,145 +26,148 @@
 			</div>
 		</div>
 		<div class="container-fluid">
-			<h1>Portfolio</h1>
+			<h1>Portfolio<br><small>A sample of my work</small></h1>
+			
+
 			<div class="videoContainer">
-				<video class="video-js vjs-default-skin videoBackground " src="Assets/scouts/scouts.mp4" poster="Assets/scouts/scoutsFirstFrame.png" autoplay loop muted data-setup="{}"></video>
 				<div class="videoOverlay">
-					<div class="row videoOverlayContent">
+					<div class="row videoOverlayHeadline">
 						<div class="col-xs-2 col-md-4"></div>
 						<div class="col-xs-8 col-md-4">
 							<img class="scoutsTitle" src="Assets/scouts/scoutsTitle.png">
 						</div>
 						<div class="col-xs-2 col-md-4"></div>
 					</div>
-					<div class="row videoOverlayContent">
-						<div class="col-xs-1 col-md-2"></div>
-						<div class="col-xs-10 col-md-8">
-							<p>
-								Some quick notes on technologies used, key topics, etc.
-							</p>
-							<p>	
-								<div class="row">
-									<div class="col-md-2 bottomSpacing">
-										<a target="_blank" href="https://play.google.com/store/apps/details?id=dk.dadiu.scouts&hl=da">
-											<img src="Assets\Get_it_on_Google_play.svg">
-										</a>
-									</div>
-									<div class="col-md-2 bottomSpacing">
-										<a target="_blank" href="https://itunes.apple.com/us/app/scouts/id958947631?mt=8&ign-mpt=uo%3D4">
-											<img src="Assets\Available_on_the_App_Store_(black)_SVG.svg">
-										</a>
-									</div>
-									<div class="col-md-2 bottomSpacing">
-										<a target="_blank" href="http://www.example.com">
-											<img src="Assets\Windows_logo_-_2012.svg">
-										</a>
-									</div>
-									<div class="col-md-4 bottomSpacing"></div>
-									<div class="col-md-2 bottomSpacing">
-										<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#scoutsModal">Read more</button>
-									</div>
+				</div>
+				<video class="videoBackground" src="Assets/scouts/scouts.mp4" poster="Assets/scouts/scoutsFirstFrame.png" controls autoplay loop muted></video>
+				<div class="row videoOverlayContent">
+					<div class="col-xs-1 col-md-2"></div>
+					<div class="col-xs-10 col-md-8">
+						<p>
+							Developing a game with a team of 19, using scrum, on the Danish Acadamy for Digital Interactive Media. 
+							Responsibilities include programming tools, gameplay logic, GUI, data storage, and prototyping.
+							The game is developed in C# and using the game engine Unity3D.
+							SCOUTS!, released on Google Play and App Store, was the game i took part in developing. It was nominated for Spilprisen 2015 (the Danish game award 2015) for Best Showcase.
+						</p>
+						<p>	
+							<div class="row">
+								<div class="col-md-2 portfolioButtons">
+									<a target="_blank" href="https://play.google.com/store/apps/details?id=dk.dadiu.scouts&hl=da">
+										<img src="Assets\Get_it_on_Google_play.svg">
+									</a>
 								</div>
-							</p>
-						</div>
-						<div class="col-xs-1 col-md-2"></div>
+								<div class="col-md-2 portfolioButtons">
+									<a target="_blank" href="https://itunes.apple.com/us/app/scouts/id958947631?mt=8&ign-mpt=uo%3D4">
+										<img src="Assets\Available_on_the_App_Store_(black)_SVG.svg">
+									</a>
+								</div>
+								<div class="col-md-2 portfolioButtons">
+									<a target="_blank" href="http://www.example.com">
+										<img src="Assets\Windows_logo_-_2012.svg">
+									</a>
+								</div>
+								<div class="col-md-4 portfolioButtons"></div>
+								<div class="col-md-2 portfolioButtons">
+									<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#scoutsModal">Read more</button>
+								</div>
+							</div>
+						</p>
 					</div>
+					<div class="col-xs-1 col-md-2"></div>
 				</div>
 			</div>
 
 			<div class="videoContainer">
-
-				<video class="videoBackground" src="Assets/scouts/scouts.mp4" poster="Assets/scouts/scoutsFirstFrame.png" autoplay loop muted></video>
-
 				<div class="videoOverlay">
-					<div class="row videoOverlayContent">
+					<div class="row videoOverlayHeadline">
 						<div class="col-xs-2 col-md-4"></div>
 						<div class="col-xs-8 col-md-4">
 							<img class="scoutsTitle" src="Assets/scouts/scoutsTitle.png">
 						</div>
 						<div class="col-xs-2 col-md-4"></div>
 					</div>
-					<div class="row videoOverlayContent">
-						<div class="col-xs-1 col-md-2"></div>
-						<div class="col-xs-10 col-md-8">
-							<p>
-							ANOTHER GAME
-							</p>
-							<p>	
-								<div class="row">
-									<div class="col-md-2 bottomSpacing">
-										<a target="_blank" href="https://play.google.com/store/apps/details?id=dk.dadiu.scouts&hl=da">
-											<img src="Assets\Get_it_on_Google_play.svg">
-										</a>
-									</div>
-									<div class="col-md-2 bottomSpacing">
-										<a target="_blank" href="https://itunes.apple.com/us/app/scouts/id958947631?mt=8&ign-mpt=uo%3D4">
-											<img src="Assets\Available_on_the_App_Store_(black)_SVG.svg">
-										</a>
-									</div>
-									<div class="col-md-2 bottomSpacing">
-										<a target="_blank" href="http://www.example.com">
-											<img src="Assets\Windows_logo_-_2012.svg">
-										</a>
-									</div>
-									<div class="col-md-4 bottomSpacing"></div>
-									<div class="col-md-2 bottomSpacing">
-										<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#scoutsModal">Read more</button>
-									</div>
+				</div>
+				<video class="videoBackground" src="Assets/scouts/scouts.mp4" poster="Assets/scouts/scoutsFirstFrame.png" controls autoplay loop muted></video>
+				<div class="row videoOverlayContent">
+					<div class="col-xs-1 col-md-2"></div>
+					<div class="col-xs-10 col-md-8">
+						<p>
+							Another game...
+						</p>
+						<p>	
+							<div class="row">
+								<div class="col-md-2 portfolioButtons">
+									<a target="_blank" href="https://play.google.com/store/apps/details?id=dk.dadiu.scouts&hl=da">
+										<img src="Assets\Get_it_on_Google_play.svg">
+									</a>
 								</div>
-							</p>
-						</div>
-						<div class="col-xs-1 col-md-2"></div>
+								<div class="col-md-2 portfolioButtons">
+									<a target="_blank" href="https://itunes.apple.com/us/app/scouts/id958947631?mt=8&ign-mpt=uo%3D4">
+										<img src="Assets\Available_on_the_App_Store_(black)_SVG.svg">
+									</a>
+								</div>
+								<div class="col-md-2 portfolioButtons">
+									<a target="_blank" href="http://www.example.com">
+										<img src="Assets\Windows_logo_-_2012.svg">
+									</a>
+								</div>
+								<div class="col-md-4 portfolioButtons"></div>
+								<div class="col-md-2 portfolioButtons">
+									<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#scoutsModal">Read more</button>
+								</div>
+							</div>
+						</p>
 					</div>
+					<div class="col-xs-1 col-md-2"></div>
 				</div>
 			</div>
 
 			<div class="videoContainer">
-
-					<video class="videoBackground" src="Assets/scouts/scouts.mp4" poster="Assets/scouts/scoutsFirstFrame.png" autoplay loop muted></video>
-
 				<div class="videoOverlay">
-					<div class="row videoOverlayContent">
+					<div class="row videoOverlayHeadline">
 						<div class="col-xs-2 col-md-4"></div>
 						<div class="col-xs-8 col-md-4">
 							<img class="scoutsTitle" src="Assets/scouts/scoutsTitle.png">
 						</div>
 						<div class="col-xs-2 col-md-4"></div>
 					</div>
-					<div class="row videoOverlayContent">
-						<div class="col-xs-1 col-md-2"></div>
-						<div class="col-xs-10 col-md-8">
-							<p>
-							YET ANOTHER GAME
-							</p>
-							<p>	
-								<div class="row">
-									<div class="col-md-2 bottomSpacing">
-										<a target="_blank" href="https://play.google.com/store/apps/details?id=dk.dadiu.scouts&hl=da">
-											<img src="Assets\Get_it_on_Google_play.svg">
-										</a>
-									</div>
-									<div class="col-md-2 bottomSpacing">
-										<a target="_blank" href="https://itunes.apple.com/us/app/scouts/id958947631?mt=8&ign-mpt=uo%3D4">
-											<img src="Assets\Available_on_the_App_Store_(black)_SVG.svg">
-										</a>
-									</div>
-									<div class="col-md-2 bottomSpacing">
-										<a target="_blank" href="http://www.example.com">
-											<img src="Assets\Windows_logo_-_2012.svg">
-										</a>
-									</div>
-									<div class="col-md-4 bottomSpacing"></div>
-									<div class="col-md-2 bottomSpacing">
-										<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#scoutsModal">Read more</button>
-									</div>
+				</div>
+				<video class="videoBackground" src="Assets/scouts/scouts.mp4" poster="Assets/scouts/scoutsFirstFrame.png" controls autoplay loop muted></video>
+				<div class="row videoOverlayContent">
+					<div class="col-xs-1 col-md-2"></div>
+					<div class="col-xs-10 col-md-8">
+						<p>
+							Yet another game...
+						</p>
+						<p>	
+							<div class="row">
+								<div class="col-md-2 portfolioButtons">
+									<a target="_blank" href="https://play.google.com/store/apps/details?id=dk.dadiu.scouts&hl=da">
+										<img src="Assets\Get_it_on_Google_play.svg">
+									</a>
 								</div>
-							</p>
-						</div>
-						<div class="col-xs-1 col-md-2"></div>
+								<div class="col-md-2 portfolioButtons">
+									<a target="_blank" href="https://itunes.apple.com/us/app/scouts/id958947631?mt=8&ign-mpt=uo%3D4">
+										<img src="Assets\Available_on_the_App_Store_(black)_SVG.svg">
+									</a>
+								</div>
+								<div class="col-md-2 portfolioButtons">
+									<a target="_blank" href="http://www.example.com">
+										<img src="Assets\Windows_logo_-_2012.svg">
+									</a>
+								</div>
+								<div class="col-md-4 portfolioButtons"></div>
+								<div class="col-md-2 portfolioButtons">
+									<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#scoutsModal">Read more</button>
+								</div>
+							</div>
+						</p>
 					</div>
+					<div class="col-xs-1 col-md-2"></div>
 				</div>
 			</div>
+
+		
 			
 			<div class="portfolioContainer">
 				<div class="row">

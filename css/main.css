@@ -58,13 +58,19 @@ footer {
 	display: block;
 }
 
+.videoOverlayHeadline {
+	position: relative;
+    z-index:5;
+}
+
 .videoOverlayContent {
+	position: relative;
     z-index:5;
 }
 
 h1 {
 	margin-top: 5%;
-	margin-bottom: 5%;
+	margin-bottom: 25%;
 	text-align: center;
 }
 
@@ -75,14 +81,15 @@ h1 {
 .scoutsTitle {
 	width: 100%;
 	height: 100%;
-	margin-top: -10%;
+	margin-bottom: 10%;
 }
 
 .row {
 	margin: 0px;
 }
 
-.bottomSpacing {
+.portfolioButtons {
+	text-align: center;
 	margin-bottom: 15px;
 }
 
@@ -156,6 +163,10 @@ p {
 }
 
 @media (min-width: 992px) {
+	h1 {
+		margin-bottom: 5%;
+	}
+
 	.intro {
 		height: 100%;
 	}
@@ -174,12 +185,20 @@ p {
 		position: absolute;
 		top: 0;
 		left: 0;
+		z-index: 4;
+		
 		background-color: rgba(0, 0, 0, 0.8);
 		width: 100%;
 		height: 100%;
-		z-index: 4;
-		
+	}
+
+	.videoOverlayContent {
+		position: absolute;
+		top: 35%;
+
+		width: 100%;
+
 		color: white;
-		font-size: 2em;
+		font-size: 1.5em;
 	}
 }
