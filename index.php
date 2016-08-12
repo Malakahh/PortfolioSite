@@ -267,9 +267,7 @@
 				<div class="col-xs-10 col-md-8">
 					<h1>Contact</h1>
 					<p>
-						I am a result driven and goal oriented person, who is not afraid to think outside the box when it comes to developing the right solution. To accommodate this, I always strive to learn, and to adapt when necessary. This adaptation helps me be able to quickly switch tasks, should a team member need it, as I am always keen to help, or should a change be needed.
-						I have a strong work ethic, and I always make sure I understand a problem before I solve it, in order to always ensure an end result that is in compliance with the goal at hand.
-						Additionally, in me you will find a guy with a strong passion for video games and wondrous adventure, and who is not afraid to take on an ambitious challenge.
+						How to do this?
 					</p>
 				</div>
 				<div class="col-xs-1 col-md-2"></div>
