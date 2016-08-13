@@ -9,7 +9,6 @@
 
 		<!-- fonts -->
 		<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-
 		
 		<title></title>
 	</head>
@@ -39,16 +38,25 @@
 						<div class="col-xs-2 col-md-4"></div>
 					</div>
 				</div>
-				<video class="videoBackground" src="Assets/scouts/scouts.mp4" poster="Assets/scouts/scoutsFirstFrame.png" controls autoplay loop muted></video>
+				<video class="videoBackground" src="Assets/scouts/scouts.mp4" poster="Assets/scouts/scoutsFirstFrame.png" preload="none" controls autoplay loop muted></video>
 				<div class="row videoOverlayContent">
 					<div class="col-xs-1 col-md-2"></div>
 					<div class="col-xs-10 col-md-8">
-						<p>
-							Developing a game with a team of 19, using scrum, on the Danish Acadamy for Digital Interactive Media. 
-							Responsibilities include programming tools, gameplay logic, GUI, data storage, and prototyping.
-							The game is developed in C# and using the game engine Unity3D.
-							SCOUTS!, released on Google Play and App Store, was the game i took part in developing. It was nominated for Spilprisen 2015 (the Danish game award 2015) for Best Showcase.
-						</p>
+						<ul>
+							<li>Developed at DADIU</li>
+							<li>September 2014 - December 2014</li>
+							<li>
+								Responsibilities included:
+								<ul>
+									<li>Capturing requirements from artists and game designers</li>
+									<li>C#</li>
+									<li>Prototyping</li>
+									<li>Tool development</li>
+									<li>Gameplay logic</li>
+								</ul> 
+							</li>
+							<li>Nominated for <a target="_blank" href="http://spilprisen.dk/node/22"> Spilprisen 2015</a> (the Danish game award 2015)</li>
+						</ul>
 						<p>	
 							<div class="row">
 								<div class="col-md-2 portfolioButtons">
@@ -87,7 +95,7 @@
 						<div class="col-xs-2 col-md-4"></div>
 					</div>
 				</div>
-				<video class="videoBackground" src="Assets/scouts/scouts.mp4" poster="Assets/scouts/scoutsFirstFrame.png" controls autoplay loop muted></video>
+				<video class="videoBackground" src="Assets/scouts/scouts.mp4" poster="Assets/scouts/scoutsFirstFrame.png" preload="none" controls autoplay loop muted></video>
 				<div class="row videoOverlayContent">
 					<div class="col-xs-1 col-md-2"></div>
 					<div class="col-xs-10 col-md-8">
@@ -132,7 +140,7 @@
 						<div class="col-xs-2 col-md-4"></div>
 					</div>
 				</div>
-				<video class="videoBackground" src="Assets/scouts/scouts.mp4" poster="Assets/scouts/scoutsFirstFrame.png" controls autoplay loop muted></video>
+				<video class="videoBackground" src="Assets/scouts/scouts.mp4" poster="Assets/scouts/scoutsFirstFrame.png" preload="none" controls autoplay loop muted></video>
 				<div class="row videoOverlayContent">
 					<div class="col-xs-1 col-md-2"></div>
 					<div class="col-xs-10 col-md-8">
@@ -248,33 +256,32 @@
 					<div class="col-md-2"></div>
 				</div>
 			</div>
-
-			<div class="row">
-				<div class="col-xs-1 col-md-2"></div>
-				<div class="col-xs-10 col-md-8">
-					<h1>About me</h1>
-					<p>
-						I am a result driven and goal oriented person, who is not afraid to think outside the box when it comes to developing the right solution. To accommodate this, I always strive to learn, and to adapt when necessary. This adaptation helps me be able to quickly switch tasks, should a team member need it, as I am always keen to help, or should a change be needed.
-						I have a strong work ethic, and I always make sure I understand a problem before I solve it, in order to always ensure an end result that is in compliance with the goal at hand.
-						Additionally, in me you will find a guy with a strong passion for video games and wondrous adventure, and who is not afraid to take on an ambitious challenge.
-					</p>
-				</div>
-				<div class="col-xs-1 col-md-2"></div>
-			</div>
 			
 			<div class="row">
 				<div class="col-xs-1 col-md-2"></div>
 				<div class="col-xs-10 col-md-8">
-					<h1>Contact</h1>
-					<p>
-						How to do this?
-					</p>
+					<h1>Elsewhere on the web<br><small>Where you can find me</small></h1>
+					<div class="row">
+						<div class="col-md-3"></div>
+						<div class="col-md-3 findMeOnTheWebButttons">
+							<a target="_blank" href="http://www.linkedin.com/in/michael-lausdahl-fuglsang">
+								<img class="findMeOnTheWebButtonImages" src="Assets\LinkedIn_Logo.svg">
+							</a>
+						</div>
+						<div class="col-md-3 findMeOnTheWebButttons">
+							<a target="_blank" href="https://github.com/Malakahh">
+								<img class="findMeOnTheWebButtonImages" src="Assets\GitHub_Logo.svg">
+							</a>
+						</div>
+						<div class="col-md-3"></div>
+					</div>
 				</div>
 				<div class="col-xs-1 col-md-2"></div>
 			</div>
+
+
+
 		</div>
-
-
 
 		<!-- Modal -->
 		<div id="scoutsModal" class="modal fade" tabindex="-1" role="dialog">

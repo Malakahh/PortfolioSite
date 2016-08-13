@@ -93,6 +93,15 @@ h1 {
 	margin-bottom: 15px;
 }
 
+.findMeOnTheWebButttons {
+	text-align: center;
+	margin-bottom: 2em;
+}
+
+.findMeOnTheWebButtonImages {
+	height: 2em;
+}
+
 p {
 	margin-top: 10%;
 	margin-bottom: 0px;
@@ -194,7 +203,7 @@ p {
 
 	.videoOverlayContent {
 		position: absolute;
-		top: 35%;
+		top: 40%;
 		
 		width: 100%;
 
