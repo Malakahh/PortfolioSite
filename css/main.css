@@ -53,6 +53,7 @@ footer {
 
 .videoBackground {
 	width: 100%;
+	margin-bottom: 1em;
 
 	z-index: 0;
 	display: block;
@@ -90,7 +91,8 @@ h1 {
 
 .portfolioButtons {
 	text-align: center;
-	margin-bottom: 15px;
+	margin-bottom: 1em;
+	margin-top: 1em; 
 }
 
 .findMeOnTheWebButttons {
@@ -100,11 +102,6 @@ h1 {
 
 .findMeOnTheWebButtonImages {
 	height: 2em;
-}
-
-p {
-	margin-top: 10%;
-	margin-bottom: 0px;
 }
 
 .modalImgHeadline {
@@ -165,10 +162,73 @@ p {
 	padding-top: 0.5em;
 	padding-bottom: 1.5em;
 	background-color: #ffffff;
+	min-height: 370px;
+	font-size: 1.3em;
 }
 
 .portfolioClickable:hover {
 	background-color: #e0e0e0;
+}
+
+.portfolioClickable h2 {
+	text-align: center;
+}
+
+.portfolioClickable ul li {
+	margin-bottom: 1em;	
+}
+
+.modal {
+	font-size: 1.2em;
+}
+
+.carousel {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+.item img {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.carousel {
+	margin-top: 2em;
+}
+
+.carousel-caption {
+	background-color: rgba(0, 0, 0, 0.8);
+	border-radius: 25px;
+}
+
+.carousel-control{
+	color: rgba(0, 0, 0, 0.8);
+}	
+
+.carousel-control:focus {
+	color: rgba(0, 0, 0, 0.8);
+	opacity: 0.5;
+}
+
+.carousel-control:hover {
+	color: #ffffff;
+	opacity: 0.5;
+}
+
+.carousel-control.left {
+	background-image: none;
+}
+
+.carousel-control.left:hover {
+	background-image: linear-gradient(to left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.2) 100%);
+}
+
+.carousel-control.right {
+	background-image: none;
+}
+
+.carousel-control.right:hover {
+	background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.2) 100%);
 }
 
 @media (min-width: 992px) {
