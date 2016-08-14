@@ -181,23 +181,6 @@
 				<div class="row">
 					<div class="col-md-2"></div>
 					<div class="col-md-4 portfolioItem">
-						<a href="#scoutsModal" class="portfolio-link" data-toggle="modal">
-							<div class="portfolioClickable">
-								<h2>
-									Portfolio Item Headline
-								</h2>
-								<p>
-									Our hardware and software modficiations demonstrate that simulating Dika is one thing,but deploying it in the wild is a completely different story.
-									That being said, we ran four novel experiments: (1) we ran 64 trials with a simulated RAID array workload, and compared results to our software simulation;
-									(2) we measured RAM throughput as a function of RAM speed on a Commodore 64;
-									(3) we dogfooded Dika on our own desktop machines, paying particular attention to interrupt rate;
-									and (4) we ran 70 trials with a simulated instant messenger workload, and compared results to our hardware emulation.
-									We discarded the results of some earlier experiments, notably when we measured RAM speed as a function of ROM space on an UNIVAC.
-								</p>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 portfolioItem">
 						<a href="#objectPoolModal" class="portfolio-link" data-toggle="modal">
 							<div class="portfolioClickable">
 								<h2>
@@ -218,16 +201,11 @@
 							</div>
 						</a>
 					</div>
-					<div class="col-md-2"></div>
-				</div>
-
-				<div class="row">
-					<div class="col-md-2"></div>
 					<div class="col-md-4 portfolioItem">
 						<a href="#scoutsModal" class="portfolio-link" data-toggle="modal">
 							<div class="portfolioClickable">
 								<h2>
-									Data structure: Heap
+									Heap
 								</h2>
 								<p>
 									<ul>
@@ -239,11 +217,16 @@
 							</div>
 						</a>
 					</div>
+					<div class="col-md-2"></div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-2"></div>
 					<div class="col-md-4 portfolioItem">
 						<a href="#scoutsModal" class="portfolio-link" data-toggle="modal">
 							<div class="portfolioClickable">
 								<h2>
-									Algorithm: A* Search
+									A* Search
 								</h2>
 								<p>
 									<ul>
@@ -255,7 +238,7 @@
 							</div>
 						</a>
 					</div>
-					<div class="col-md-2"></div>
+					<div class="col-md-6"></div>
 				</div>
 			</div>
 			
@@ -299,9 +282,15 @@
 
 						<!-- CONTENT -->
 						<img class="modalImgHeadline" src="Assets/scouts/scoutsTitle.png">
-						<p>Join Billy Bullseye, Tina Ties-A-Knot, and Chubby Chuck on their scouting adventures.
-							Collect plants, spot animals and navigate obstacles, but watch out for bears...</p>
-						<p>A more detailed text...</p>
+						<p>
+							Join Billy Bullseye, Tina Ties-A-Knot, and Chubby Chuck on their scouting adventures. Collect plants, spot animals and navigate obstacles, but watch out for bears...
+						</p>
+						<p>
+							This game was made during my stay at DADIU from September 2014 - December 2014. It is developed using C# and Unity3D. It was nominated for <a target="_blank" href="http://spilprisen.dk/node/22"> Spilprisen 2015</a> (the Danish game award 2015).
+						</p>
+						<p>
+							
+						</p>
 
 						<!-- IMAGE SLIDER -->
 						<div id="scoutsSlider" class="carousel slide" data-ride="carousel">
