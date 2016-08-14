@@ -223,7 +223,7 @@ h1 {
 }
 
 .carousel-control.left:hover {
-	background-image: linear-gradient(to left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.2) 100%);
+	background-image: linear-gradient(to left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.8) 100%);
 }
 
 .carousel-control.right {
@@ -231,7 +231,7 @@ h1 {
 }
 
 .carousel-control.right:hover {
-	background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.2) 100%);
+	background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.8) 100%);
 }
 
 @media (min-width: 992px) {

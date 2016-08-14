@@ -70,7 +70,7 @@
 									</a>
 								</div>
 								<div class="col-md-2 portfolioButtons">
-									<a target="_blank" href="http://www.example.com">
+									<a target="_blank" href="downloads/Scouts.zip">
 										<img src="Assets\Windows_logo_-_2012.svg">
 									</a>
 								</div>
@@ -286,11 +286,38 @@
 							Join Billy Bullseye, Tina Ties-A-Knot, and Chubby Chuck on their scouting adventures. Collect plants, spot animals and navigate obstacles, but watch out for bears...
 						</p>
 						<p>
-							This game was made during my stay at DADIU from September 2014 - December 2014. It is developed using C# and Unity3D. It was nominated for <a target="_blank" href="http://spilprisen.dk/node/22"> Spilprisen 2015</a> (the Danish game award 2015).
+							This game was made during my stay at DADIU from September 2014 - December 2014. It was nominated for <a target="_blank" href="http://spilprisen.dk/node/22"> Spilprisen 2015</a> (the Danish game award 2015).
 						</p>
 						<p>
-							
+							This game is developed using C# and Unity3D, mainly designed around the use on touch screen devices.
+							During this project I worked closely together with the lead programmer for fast prototyping of various components. I prototyped the statistics tracking system which later developed into the badge system, the procedural world generation, as well as various power-ups.
+							Furthermore, I was in charge of data serialization and I worked alongside the level designer to create the tool he used to create the tutorial.
 						</p>
+
+						<div class="portfolioButtons">
+							<p>
+								To watch the game trailer, or find other information follow the links below
+							</p>
+							<div class="row">
+								<div class="col-md-3"></div>
+								<div class="col-md-2 portfolioButtons">
+									<a target="_blank" href="https://www.youtube.com/watch?v=UWX8zPzU1E0">
+										<img class="findMeOnTheWebButtonImages" src="Assets\YouTube_logo.svg">
+									</a>
+								</div>
+								<div class="col-md-2 portfolioButtons">
+									<a target="_blank" href="https://www.facebook.com/scoutsgame">
+										<img class="findMeOnTheWebButtonImages" src="Assets\Facebook_logo.svg">
+									</a>
+								</div>
+								<div class="col-md-2 portfolioButtons">
+									<a target="_blank" href="http://www.dadiu.dk/scouts/">
+										<img class="findMeOnTheWebButtonImages" src="Assets\dadiuSmall.jpg">
+									</a>
+								</div>
+								<div class="col-md-3"></div>
+							</div>
+						</div>
 
 						<!-- IMAGE SLIDER -->
 						<div id="scoutsSlider" class="carousel slide" data-ride="carousel">
@@ -299,20 +326,40 @@
 								<li data-target="#scoutsSlider" data-slide-to="0" class="active"></li>
 								<li data-target="#scoutsSlider" data-slide-to="1"></li>
 								<li data-target="#scoutsSlider" data-slide-to="2"></li>
+								<li data-target="#scoutsSlider" data-slide-to="3"></li>
+								<li data-target="#scoutsSlider" data-slide-to="4"></li>
 							</ol>
 
 							<!-- Wrapper for slides -->
 							<div class="carousel-inner" role="listbox">
 								<div class="item active">
-									<img src="Assets/ConstructionPenguin.png">
+									<img src="Assets/scouts/titleScreen.jpg">
 									<div class="carousel-caption">
-										Example caption
+										Title screen of the game
 									</div>
 								</div>
 								<div class="item">
-									<img src="Assets/ConstructionPenguin.png">
+									<img src="Assets/scouts/gameplay.jpg">
 									<div class="carousel-caption">
-										Another example caption
+										Gameplay. The three scouts are moving past a campside that serves as a shop, and allows them to regain their health
+									</div>
+								</div>
+								<div class="item">
+									<img src="Assets/scouts/ConceptArt.jpg">
+									<div class="carousel-caption">
+										Concept art of the terrain, highlighting the mood of the game
+									</div>
+								</div>
+								<div class="item">
+									<img src="Assets/scouts/threeScouts.png">
+									<div class="carousel-caption">
+										Concept of the three scouts
+									</div>
+								</div>
+								<div class="item">
+									<img src="Assets/scouts/startScreen.jpg">
+									<div class="carousel-caption">
+										Start screen of the game
 									</div>
 								</div>
 							</div>
