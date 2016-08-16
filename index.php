@@ -46,11 +46,11 @@
 							<li>Developed at DADIU</li>
 							<li>September 2014 - December 2014</li>
 							<li>
-								Responsibilities included:
+								My responsibilities included:
 								<ul>
 									<li>Capturing requirements from artists and game designers</li>
-									<li>C#</li>
-									<li>Prototyping</li>
+									<li>C# and Unity3D Development</li>
+									<li>Fast prototyping</li>
 									<li>Tool development</li>
 									<li>Gameplay logic</li>
 								</ul> 
@@ -90,38 +90,40 @@
 					<div class="row videoOverlayHeadline">
 						<div class="col-xs-2 col-md-4"></div>
 						<div class="col-xs-8 col-md-4">
-							<img class="scoutsTitle" src="Assets/scouts/scoutsTitle.png">
+							<img class="excessumBracatumTitle" src="Assets/excessumBracatum/ExcessumBracatumLogo.png">
 						</div>
 						<div class="col-xs-2 col-md-4"></div>
 					</div>
 				</div>
-				<video class="videoBackground" src="Assets/scouts/scouts.mp4" poster="Assets/scouts/scoutsFirstFrame.png" preload="none" controls autoplay loop muted></video>
+				<video class="videoBackground" src="Assets/excessumBracatum/excessumBracatum.mp4" poster="Assets/excessumBracatum/excessumBracatumFirstFrame.png" preload="none" controls autoplay loop muted></video>
 				<div class="row videoOverlayContent">
 					<div class="col-xs-1 col-md-2"></div>
 					<div class="col-xs-10 col-md-8">
-						<p>
-							Another game...
-						</p>
+						<ul>
+							<li>8th semesters project at Aalborg University</li>
+							<li>February 2015 - June 2015</li>
+							<li>
+								My responsibilities included:
+								<ul>
+									<li>C# and Unity3D development</li>
+									<li>Networking</li>
+									<li>System for creating custom missions</li>
+									<li>System for creating custom enemy spawning</li>
+									<li>Support for touch devices</li>
+									<li>Object pooling</li>
+								</ul> 
+							</li>
+						</ul>
 						<p>	
 							<div class="row">
 								<div class="col-md-2 portfolioButtons">
-									<a target="_blank" href="https://play.google.com/store/apps/details?id=dk.dadiu.scouts&hl=da">
-										<img src="Assets\Get_it_on_Google_play.svg">
-									</a>
-								</div>
-								<div class="col-md-2 portfolioButtons">
-									<a target="_blank" href="https://itunes.apple.com/us/app/scouts/id958947631?mt=8&ign-mpt=uo%3D4">
-										<img src="Assets\Available_on_the_App_Store_(black)_SVG.svg">
-									</a>
-								</div>
-								<div class="col-md-2 portfolioButtons">
-									<a target="_blank" href="http://www.example.com">
+									<a target="_blank" href="downloads/ExcessumBracatum.zip">
 										<img src="Assets\Windows_logo_-_2012.svg">
 									</a>
 								</div>
-								<div class="col-md-4 portfolioButtons"></div>
+								<div class="col-md-8 portfolioButtons"></div>
 								<div class="col-md-2 portfolioButtons">
-									<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#scoutsModal">Read more</button>
+									<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#excessumBracatumModal">Read more</button>
 								</div>
 							</div>
 						</p>
@@ -148,10 +150,10 @@
 							<li>Developed at a gamejam at DADIU</li>
 							<li>September 2014</li>
 							<li>
-								Responsibilities included:
+								My responsibilities included:
 								<ul>
 									<li>Capturing requirements from game designers and level designers</li>
-									<li>C#</li>
+									<li>C# and Unity3D development</li>
 									<li>Gameplay logic</li>
 								</ul> 
 							</li>
@@ -192,12 +194,11 @@
 								</h2>
 								<p>
 									<ul>
-										<li>Fully documented</li>
+										<li>Fully documented and unit tested</li>
 										<li>Contains any object</li>
 										<li>Grows by N*2, where N = number of requests, ensuring readily available supply</li>
 										<li>Asynchronous instantiation</li>
 										<li>Singleton pattern</li>
-										<li>Unit tests</li>
 										<li>Tested to improve performance by 42%</li>
 										<li>Developed for Unity3D</li>
 									</ul>
@@ -325,14 +326,14 @@
 						</div>
 
 						<!-- IMAGE SLIDER -->
-						<div id="scoutsSlider" class="carousel slide" data-ride="carousel">
+						<div id="excessumBracatumSlider" class="carousel slide" data-ride="carousel">
 							<!-- Indicators -->
 						 	<ol class="carousel-indicators">
-								<li data-target="#scoutsSlider" data-slide-to="0" class="active"></li>
-								<li data-target="#scoutsSlider" data-slide-to="1"></li>
-								<li data-target="#scoutsSlider" data-slide-to="2"></li>
-								<li data-target="#scoutsSlider" data-slide-to="3"></li>
-								<li data-target="#scoutsSlider" data-slide-to="4"></li>
+								<li data-target="#excessumBracatumSlider" data-slide-to="0" class="active"></li>
+								<li data-target="#excessumBracatumSlider" data-slide-to="1"></li>
+								<li data-target="#excessumBracatumSlider" data-slide-to="2"></li>
+								<li data-target="#excessumBracatumSlider" data-slide-to="3"></li>
+								<li data-target="#excessumBracatumSlider" data-slide-to="4"></li>
 							</ol>
 
 							<!-- Wrapper for slides -->
@@ -365,6 +366,95 @@
 									<img src="Assets/scouts/startScreen.jpg">
 									<div class="carousel-caption">
 										Start screen of the game
+									</div>
+								</div>
+							</div>
+
+							<!-- Controls -->
+							<a class="left carousel-control" href="#excessumBracatumSlider" role="button" data-slide="prev">
+								<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="right carousel-control" href="#excessumBracatumSlider" role="button" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>
+
+
+						<div class="row">
+							<div class="col-xs-4 col-md-5"></div>
+							<div class="col-xs-4 col-md-2">
+								<button type="button" class="btn btn-default modalBtnClose" data-dismiss="modal">Close</button>
+							</div>
+							<div class="col-xs-4 col-md-5"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="excessumBracatumModal" class="modal fade" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="close-modal" data-dismiss="modal">
+							<div class="lr">
+								<div class="rl"></div>
+							</div>
+						</div>
+						
+
+						<!-- CONTENT -->
+						<img class="modalImgHeadline" src="Assets/excessumBracatum/excessumBracatumLogo.png">
+						<p>
+							Heavily inspired by the game <i>Crimsonland</i>, this twinstick shooter features networked 8-player multiplayer, support for creating custom levels, missions, monsters and texturepacks, keyboard + mouse, gamepad as well as touch control support, a system for crafting and upgrading weapons, and 4 unique classes. 
+						</p>
+						<p>
+							It is developed by a team of 7 software engineers as an 8th semester project at Aalborg University. I was in charge of creating the flexible level and missions system featuring support for users to create their own missions and enemy spawns. Furthermore, I synchronized data over the network and I developed support for various control inputs. 
+						</p>
+
+						<!-- IMAGE SLIDER -->
+						<div id="scoutsSlider" class="carousel slide" data-ride="carousel">
+							<!-- Indicators -->
+						 	<ol class="carousel-indicators">
+								<li data-target="#scoutsSlider" data-slide-to="0" class="active"></li>
+								<li data-target="#scoutsSlider" data-slide-to="1"></li>
+								<li data-target="#scoutsSlider" data-slide-to="2"></li>
+								<li data-target="#scoutsSlider" data-slide-to="3"></li>
+								<li data-target="#scoutsSlider" data-slide-to="4"></li>
+							</ol>
+
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner" role="listbox">
+								<div class="item active">
+									<img src="Assets/excessumBracatum/characterSelection.PNG">
+									<div class="carousel-caption">
+										Lobby with the character selection screen showing. Currently Mendy, the support character, is selected
+									</div>
+								</div>
+								<div class="item">
+									<img src="Assets/excessumBracatum/combat.png">
+									<div class="carousel-caption">
+										Gameplay. The enemies are advancing towards the player, using their pathfinding to navigate around the walls
+									</div>
+								</div>
+								<div class="item">
+									<img src="Assets/excessumBracatum/alpha.jpg">
+									<div class="carousel-caption">
+										Early stages of development, about 4 weeks in. The screenshot is showing 4 players working together
+									</div>
+								</div>
+								<div class="item">
+									<img src="Assets/excessumBracatum/rocketlauncher.png">
+									<div class="carousel-caption">
+										Gameplay showing some more heavy weaponry in the form of a bazooka
+									</div>
+								</div>
+								<div class="item">
+									<img src="Assets/excessumBracatum/scoreScreen.PNG">
+									<div class="carousel-caption">
+										This score screen is show between each level, indicating the contributions of each player
 									</div>
 								</div>
 							</div>
