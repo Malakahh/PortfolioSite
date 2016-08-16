@@ -16,7 +16,7 @@ footer {
 }
 
 .intro {
-	background-image: url("../Assets/Metemp.jpg");
+	background-image: url("../Assets/me/deskbw.png");
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -32,10 +32,11 @@ footer {
 	color: white;
 	font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-style: italic;
-	font-size: 2em;
+	font-size: 3em;
 
 	padding-bottom: 5px;
 	padding-top: 5px;
+	text-shadow: 2px 1px #333333;
 }
 
 .introSignature {
@@ -254,9 +255,9 @@ h1 {
 	}
 
 	.intro h1 {
-		width: 50%;
-		margin-left: 25%;
-		font-size: 3.5em;
+		width: 70%;
+		margin-left: 15%;
+		font-size: 5em;
 	}
 
 	.introSignature {
