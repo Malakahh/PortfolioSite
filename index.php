@@ -406,7 +406,7 @@
 						
 
 						<!-- CONTENT -->
-						<img class="modalImgHeadline" src="Assets/excessumBracatum/excessumBracatumLogo.png">
+						<img class="modalImgHeadline" src="Assets/excessumBracatum/ExcessumBracatumLogo.png">
 						<p>
 							Heavily inspired by the game <i>Crimsonland</i>, this twinstick shooter features networked 8-player multiplayer, support for creating custom levels, missions, monsters and texturepacks, keyboard + mouse, gamepad as well as touch control support, a system for crafting and upgrading weapons, and 4 unique classes. 
 						</p>
