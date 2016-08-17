@@ -61,17 +61,17 @@
 							<div class="row">
 								<div class="col-md-2 portfolioButtons">
 									<a target="_blank" href="https://play.google.com/store/apps/details?id=dk.dadiu.scouts&hl=da">
-										<img src="Assets\Get_it_on_Google_play.svg">
+										<img src="Assets/Get_it_on_Google_play.svg">
 									</a>
 								</div>
 								<div class="col-md-2 portfolioButtons">
 									<a target="_blank" href="https://itunes.apple.com/us/app/scouts/id958947631?mt=8&ign-mpt=uo%3D4">
-										<img src="Assets\Available_on_the_App_Store_(black)_SVG.svg">
+										<img src="Assets/Available_on_the_App_Store_(black)_SVG.svg">
 									</a>
 								</div>
 								<div class="col-md-2 portfolioButtons">
 									<a target="_blank" href="downloads/Scouts.zip">
-										<img src="Assets\Windows_logo_-_2012.svg">
+										<img src="Assets/Windows_logo_-_2012.svg">
 									</a>
 								</div>
 								<div class="col-md-4 portfolioButtons"></div>
@@ -118,7 +118,7 @@
 							<div class="row">
 								<div class="col-md-2 portfolioButtons">
 									<a target="_blank" href="downloads/ExcessumBracatum.zip">
-										<img src="Assets\Windows_logo_-_2012.svg">
+										<img src="Assets/Windows_logo_-_2012.svg">
 									</a>
 								</div>
 								<div class="col-md-8 portfolioButtons"></div>
@@ -162,12 +162,12 @@
 							<div class="row">
 								<div class="col-md-2 portfolioButtons">
 									<a target="_blank" href="downloads/Hotshotshowoff.apk">
-										<img src="Assets\apk.svg">
+										<img src="Assets/apk.svg">
 									</a>
 								</div>
 								<div class="col-md-2 portfolioButtons">
 									<a target="_blank" href="downloads/HotshotShowoff.zip">
-										<img src="Assets\Windows_logo_-_2012.svg">
+										<img src="Assets/Windows_logo_-_2012.svg">
 									</a>
 								</div>
 								<div class="col-md-6 portfolioButtons"></div>
@@ -256,12 +256,12 @@
 						<div class="col-md-3"></div>
 						<div class="col-md-3 findMeOnTheWebButttons">
 							<a target="_blank" href="http://www.linkedin.com/in/michael-lausdahl-fuglsang">
-								<img class="findMeOnTheWebButtonImages" src="Assets\LinkedIn_Logo.svg">
+								<img class="findMeOnTheWebButtonImages" src="Assets/LinkedIn_Logo.svg">
 							</a>
 						</div>
 						<div class="col-md-3 findMeOnTheWebButttons">
 							<a target="_blank" href="https://github.com/Malakahh">
-								<img class="findMeOnTheWebButtonImages" src="Assets\GitHub_Logo.svg">
+								<img class="findMeOnTheWebButtonImages" src="Assets/GitHub_Logo.svg">
 							</a>
 						</div>
 						<div class="col-md-3"></div>
@@ -308,17 +308,17 @@
 								<div class="col-md-3"></div>
 								<div class="col-md-2 portfolioButtons">
 									<a target="_blank" href="https://www.youtube.com/watch?v=UWX8zPzU1E0">
-										<img class="findMeOnTheWebButtonImages" src="Assets\YouTube_logo.svg">
+										<img class="findMeOnTheWebButtonImages" src="Assets/YouTube_logo.svg">
 									</a>
 								</div>
 								<div class="col-md-2 portfolioButtons">
 									<a target="_blank" href="https://www.facebook.com/scoutsgame">
-										<img class="findMeOnTheWebButtonImages" src="Assets\Facebook_logo.svg">
+										<img class="findMeOnTheWebButtonImages" src="Assets/Facebook_logo.svg">
 									</a>
 								</div>
 								<div class="col-md-2 portfolioButtons">
 									<a target="_blank" href="http://www.dadiu.dk/scouts/">
-										<img class="findMeOnTheWebButtonImages" src="Assets\dadiuSmall.jpg">
+										<img class="findMeOnTheWebButtonImages" src="Assets/dadiuSmall.jpg">
 									</a>
 								</div>
 								<div class="col-md-3"></div>
@@ -513,7 +513,7 @@
 								<div class="col-md-5"></div>
 								<div class="col-md-2 portfolioButtons">
 									<a target="_blank" href="https://www.youtube.com/watch?v=EDdloaRRb7g">
-										<img class="findMeOnTheWebButtonImages" src="Assets\YouTube_logo.svg">
+										<img class="findMeOnTheWebButtonImages" src="Assets/YouTube_logo.svg">
 									</a>
 								</div>
 								<div class="col-md-5"></div>
@@ -612,7 +612,7 @@
 								You can find the source code at:
 							</p>
 							<a target="_blank" href="https://github.com/Malakahh/MalasObjectPool">
-								<img class="findMeOnTheWebButtonImages" src="Assets\GitHub_Logo.svg">
+								<img class="findMeOnTheWebButtonImages" src="Assets/GitHub_Logo.svg">
 							</a>
 						</div>						
 
@@ -700,7 +700,7 @@
 								You can find the source code at:
 							</p>
 							<a target="_blank" href="https://github.com/Malakahh/Heap">
-								<img class="findMeOnTheWebButtonImages" src="Assets\GitHub_Logo.svg">
+								<img class="findMeOnTheWebButtonImages" src="Assets/GitHub_Logo.svg">
 							</a>
 						</div>	
 
@@ -748,7 +748,7 @@
 								You can find the source code at:
 							</p>
 							<a target="_blank" href="https://github.com/Malakahh/A-star">
-								<img class="findMeOnTheWebButtonImages" src="Assets\GitHub_Logo.svg">
+								<img class="findMeOnTheWebButtonImages" src="Assets/GitHub_Logo.svg">
 							</a>
 						</div>						
 

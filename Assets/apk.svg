@@ -10,16 +10,22 @@
 	.st4{font-family:'MyriadPro-Regular';}
 	.st5{font-size:10px;}
 	.st6{fill:#A4C639;}
-	.st7{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st7{fill:none;}
+	.st8{fill:none;stroke:#000000;stroke-miterlimit:10;}
 </style>
 <g>
 	<path class="st0" d="M-107.8,417h-125.5c-2.6,0-4.7-2.1-4.7-4.7v-30.5c0-2.6,2.1-4.7,4.7-4.7h125.5c2.6,0,4.8,2.1,4.8,4.7v30.5
 		C-103,414.9-105.2,417-107.8,417z"/>
 	<path d="M-104,412.3c0,2.1-1.7,3.8-3.8,3.8h-125.5c-2.1,0-3.8-1.7-3.8-3.8v-30.5c0-2.1,1.7-3.8,3.8-3.8h125.5
-		c2.1,0,3.8,1.7,3.8,3.8L-104,412.3z"/>
-	<text transform="matrix(1 0 0 1 -198.0977 408.5039)"><tspan x="0" y="0" class="st1 st2 st3">A</tspan><tspan x="9.5" y="0" class="st1 st2 st3">nd</tspan><tspan x="26.8" y="0" class="st1 st2 st3">r</tspan><tspan x="32" y="0" class="st1 st2 st3">oid .apk</tspan></text>
-	<text transform="matrix(1 0 0 1 -111.3848 408.5039)" class="st1 st4 st3"> </text>
-	<text transform="matrix(1 0 0 1 -194.5898 390.3906)"><tspan x="0" y="0" class="st1 st2 st5">D</tspan><tspan x="6.8" y="0" class="st1 st2 st5">o</tspan><tspan x="12.4" y="0" class="st1 st2 st5">wnload </tspan></text>
+		c2.1,0,3.8,1.7,3.8,3.8V412.3z"/>
+	<text transform="matrix(1 0 0 1 -198.0977 408.4539)" class="st1 st2 st3">A</text>
+	<text transform="matrix(1 0 0 1 -188.5977 408.4539)" class="st1 st2 st3">nd</text>
+	<text transform="matrix(1 0 0 1 -171.2977 408.4539)" class="st1 st2 st3">r</text>
+	<text transform="matrix(1 0 0 1 -166.0977 408.4539)" class="st1 st2 st3">oid .apk</text>
+	<text transform="matrix(1 0 0 1 -111.3848 408.4539)" class="st1 st4 st3"> </text>
+	<text transform="matrix(1 0 0 1 -194.5898 390.3406)" class="st1 st2 st5">D</text>
+	<text transform="matrix(1 0 0 1 -187.7898 390.3406)" class="st1 st2 st5">o</text>
+	<text transform="matrix(1 0 0 1 -182.1898 390.3406)" class="st1 st2 st5">wnload </text>
 	<ellipse class="st6" cx="-217.2" cy="390.8" rx="9.2" ry="8.5"/>
 	<path class="st6" d="M-224.1,388.7h13.9c1.2,0,2.2,1,2.2,2.2v13.9c0,1.2-1,2.2-2.2,2.2h-13.9c-1.2,0-2.2-1-2.2-2.2v-13.9
 		C-226.3,389.7-225.3,388.7-224.1,388.7z"/>
@@ -38,8 +44,8 @@
 	<ellipse class="st6" cx="-217.2" cy="390.8" rx="9.2" ry="8.5"/>
 	<path class="st6" d="M-224.1,388.7h13.9c1.2,0,2.2,1,2.2,2.2v13.9c0,1.2-1,2.2-2.2,2.2h-13.9c-1.2,0-2.2-1-2.2-2.2v-13.9
 		C-226.3,389.7-225.3,388.7-224.1,388.7z"/>
-	<line class="st1" x1="-226.7" y1="391.2" x2="-207.5" y2="391.2"/>
 	<line class="st7" x1="-226.7" y1="391.2" x2="-207.5" y2="391.2"/>
+	<line class="st8" x1="-226.7" y1="391.2" x2="-207.5" y2="391.2"/>
 	<circle class="st1" cx="-221.4" cy="386.7" r="0.4"/>
 	<circle class="st1" cx="-212.7" cy="386.9" r="0.7"/>
 	<circle class="st1" cx="-221.4" cy="386.9" r="0.7"/>
