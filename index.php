@@ -179,9 +179,7 @@
 					</div>
 					<div class="col-xs-1 col-md-2"></div>
 				</div>
-			</div>
-
-		
+			</div>	
 			
 			<div class="portfolioContainer">
 				<div class="row">
@@ -207,6 +205,27 @@
 						</a>
 					</div>
 					<div class="col-md-4 portfolioItem">
+						<a href="#WoWAddonModal" class="portfolio-link" data-toggle="modal">
+							<div class="portfolioClickable">
+								<h2>
+									World of Warcraft Addons
+								</h2>
+								<p>
+									<ul>
+										<li>UI modifications for World of Warcraft</li>
+										<li>Written in Lua</li>
+										<li>More than 3500 downloads across WoWInterface and Curse</li>
+									</ul>
+								</p>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-2"></div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-4 portfolioItem">
 						<a href="#heapModal" class="portfolio-link" data-toggle="modal">
 							<div class="portfolioClickable">
 								<h2>
@@ -223,11 +242,6 @@
 							</div>
 						</a>
 					</div>
-					<div class="col-md-2"></div>
-				</div>
-
-				<div class="row">
-					<div class="col-md-2"></div>
 					<div class="col-md-4 portfolioItem">
 						<a href="#AStarModal" class="portfolio-link" data-toggle="modal">
 							<div class="portfolioClickable">
@@ -244,7 +258,7 @@
 							</div>
 						</a>
 					</div>
-					<div class="col-md-6"></div>
+					<div class="col-md-2"></div>
 				</div>
 			</div>
 			
@@ -254,14 +268,19 @@
 					<h1>Elsewhere on the web<br><small>Where you can find me</small></h1>
 					<div class="row">
 						<div class="col-md-3"></div>
-						<div class="col-md-3 findMeOnTheWebButttons">
+						<div class="col-md-2 findMeOnTheWebButttons">
 							<a target="_blank" href="http://www.linkedin.com/in/michael-lausdahl-fuglsang">
 								<img class="findMeOnTheWebButtonImages" src="Assets/LinkedIn_Logo.svg">
 							</a>
 						</div>
-						<div class="col-md-3 findMeOnTheWebButttons">
+						<div class="col-md-2 findMeOnTheWebButttons">
 							<a target="_blank" href="https://github.com/Malakahh">
 								<img class="findMeOnTheWebButtonImages" src="Assets/GitHub_Logo.svg">
+							</a>
+						</div>
+						<div class="col-md-2 findMeOnTheWebButttons">
+							<a target="_blank" href="http://www.wowinterface.com/downloads/author-186276.html">
+								<img class="findMeOnTheWebButtonImages" src="Assets/WoWInterface_Logo.svg">
 							</a>
 						</div>
 						<div class="col-md-3"></div>
@@ -789,6 +808,94 @@
 								<span class="sr-only">Previous</span>
 							</a>
 							<a class="right carousel-control" href="#AStarSlider" role="button" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>
+
+						<div class="row">
+							<div class="col-xs-4 col-md-5"></div>
+							<div class="col-xs-4 col-md-2">
+								<button type="button" class="btn btn-default modalBtnClose" data-dismiss="modal">Close</button>
+							</div>
+							<div class="col-xs-4 col-md-5"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="WoWAddonModal" class="modal fade" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="close-modal" data-dismiss="modal">
+							<div class="lr">
+								<div class="rl"></div>
+							</div>
+						</div>
+
+						<!-- CONTENT -->
+						<h1>World of Warcraft Addons</h1>
+						<p>
+							Blizzard, the creators of World of Warcraft, has made available to option for players to customize their gaming experience through user interface modifications.
+							I have taken advantage of this to create some of my own.
+						</p>
+						<p>
+							Addons for WoW are made using a combination of XML and Lua, the latter of which I have come to particularly enjoy writing in.
+							I have created several smaller addons to assist myself and friends, though I have only chosen to release a few.
+						</p>
+						<p>
+							Of the addons I have released, I want to highlight MalOrbs. It creates several customizable progress bars that convey important information to the player.
+						</p>
+					
+
+						<div class="portfolioButtons">
+							<p>
+								You can find the ones I have released at my WoWInterface profile at:
+							</p>
+							<a target="_blank" href="http://www.wowinterface.com/downloads/author-186276.html">
+								<img class="findMeOnTheWebButtonImages" src="Assets/WoWInterface_Logo.svg">
+							</a>
+						</div>						
+
+						<!-- IMAGE SLIDER -->
+						<div id="WoWAddonSlider" class="carousel slide" data-ride="carousel">
+							<!-- Indicators -->
+						 	<ol class="carousel-indicators">
+								<li data-target="#WoWAddonSlider" data-slide-to="0" class="active"></li>
+								<li data-target="#WoWAddonSlider" data-slide-to="1"></li>
+								<li data-target="#WoWAddonSlider" data-slide-to="2"></li>
+							</ol>
+
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner" role="listbox">
+								<div class="item active">
+									<img src="Assets/wowaddons/malorbs1.png">
+									<div class="carousel-caption">
+										This image shows off the addon MalOrbs.
+									</div>
+								</div>
+								<div class="item">
+									<img src="Assets/wowaddons/malorbs2.png">
+									<div class="carousel-caption">
+										Here we see some of the settings for the addon MalOrbs.
+									</div>
+								</div>
+								<div class="item">
+									<img src="Assets/wowaddons/answeringMachine.jpg">
+									<div class="carousel-caption">
+										Early stages of the addon Answering Machine. It keeps track of private messages in heated situations, ensuring you never miss an important message.
+									</div>
+								</div>
+							</div>
+
+							<!-- Controls -->
+							<a class="left carousel-control" href="#WoWAddonSlider" role="button" data-slide="prev">
+								<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="right carousel-control" href="#WoWAddonSlider" role="button" data-slide="next">
 								<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 								<span class="sr-only">Next</span>
 							</a>
