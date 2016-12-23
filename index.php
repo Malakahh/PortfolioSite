@@ -280,7 +280,7 @@
 						</div>
 						<div class="col-md-2 findMeOnTheWebButttons">
 							<a target="_blank" href="http://www.wowinterface.com/downloads/author-186276.html">
-								<img class="findMeOnTheWebButtonImages" src="Assets/WoWInterface_Logo.svg">
+								<img class="findMeOnTheWebButtonImages" src="Assets/WoWInterface_logo.svg">
 							</a>
 						</div>
 						<div class="col-md-3"></div>
@@ -855,7 +855,7 @@
 								You can find the ones I have released at my WoWInterface profile at:
 							</p>
 							<a target="_blank" href="http://www.wowinterface.com/downloads/author-186276.html">
-								<img class="findMeOnTheWebButtonImages" src="Assets/WoWInterface_Logo.svg">
+								<img class="findMeOnTheWebButtonImages" src="Assets/WoWInterface_logo.svg">
 							</a>
 						</div>						
 
